@@ -101,7 +101,7 @@ charts and screenshots as PNG so their text stays sharp.
 │   ├── optimise_images.py      resize and compress source photographs
 │   └── requirements.txt
 ├── dist/index.html             generated offline bundle
-└── .github/workflows/pages.yml deploys to GitHub Pages on push to main
+└── .github/workflows/deploy-pages.yml  publishes to Pages on push to main
 ```
 
 ### Why no framework
@@ -117,8 +117,9 @@ dependencies, and they run from a USB stick on a laptop with no internet.
 
 ## Deploying
 
-The workflow in `.github/workflows/pages.yml` publishes on every push to `main`.
-Enable it once under **Settings, Pages, Build and deployment, Source, GitHub
+The workflow in `.github/workflows/deploy-pages.yml` publishes on every push to
+`main`. It is already switched on for this repository — if it is ever re-homed,
+enable it once under **Settings, Pages, Build and deployment, Source, GitHub
 Actions**.
 
 ---

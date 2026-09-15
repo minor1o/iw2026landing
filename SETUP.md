@@ -1,5 +1,11 @@
 # Pushing this to GitHub, step by step
 
+This bundle is already published from
+[`minor1o/iw2026landing`](https://github.com/minor1o/iw2026landing) at
+<https://minor1o.github.io/iw2026landing/>, by
+`.github/workflows/deploy-pages.yml` on every push to `main`. Everything below is
+for the case where the site is re-homed into a *different* repository.
+
 Two routes. Pick one.
 
 ---
@@ -17,14 +23,15 @@ Good if git is not installed on your laptop.
    Wait for all files to finish uploading.
 4. Commit message: `Cowllar landing page`. Click **Commit changes**.
 5. Go to **Settings, Pages**. Under **Build and deployment, Source** choose
-   **GitHub Actions**. The workflow in the zip does the rest.
+   **GitHub Actions**. `.github/workflows/deploy-pages.yml` in the zip does the
+   rest. The site is not reachable until this step is done.
 6. Wait about a minute, then open
    `https://<your-user>.github.io/cowllar-site/`.
 
 One caveat: drag and drop sometimes skips folders that start with a dot. If
-`.github/workflows/pages.yml` did not upload, use **Add file, Create new file**,
-type `.github/workflows/pages.yml` as the name, paste the contents from the zip,
-and commit.
+`.github/workflows/deploy-pages.yml` did not upload, use **Add file, Create new
+file**, type `.github/workflows/deploy-pages.yml` as the name, paste the contents
+from the zip, and commit.
 
 ---
 

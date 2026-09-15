@@ -4,10 +4,11 @@
 # colleagues only have to commit HTML — nothing else is required of them.
 #
 # ONE-TIME SETUP, which cannot be done from a file:
-#   Settings -> Pages -> Source = "GitHub Actions"
+#   Settings -> Pages -> Build and deployment -> Source = "GitHub Actions"
 # Until that is set, the deploy job stops at "Setup Pages" with
-# "Get Pages site failed. Please verify that the repository has Pages enabled
-# and configured to build using GitHub Actions".
+# "Get Pages site failed. ... Error: Not Found", which does not say why. The
+# "Is Pages switched on?" step below turns that into a sentence that does.
+# (For minor1o/iw2026landing this was done once via the API on 2026-09-15.)
 #
 # SITE_DIR is the directory that becomes the web root — the repository root
 # today. Change it (here, in one place) if the page ever moves into a build
@@ -40,6 +41,10 @@ jobs:
       cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The workspace is what gets archived and served as the site, and
+          # nothing here needs the token written into .git/config.
+          persist-credentials: false
 
       - name: The web root must contain an index.html
         run: |
@@ -76,7 +81,42 @@ jobs:
       group: pages
       cancel-in-progress: false
     steps:
+      # Runs before the checkout, so a repository that cannot publish fails in
+      # seconds instead of after downloading the site. Fail fast when the cause
+      # is certain; warn and let configure-pages speak for itself when it is not.
+      - name: Is Pages switched on?
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          api="$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/pages"
+          code=$(curl -sS -o "$RUNNER_TEMP/pages.json" -w '%{http_code}' \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" "$api")
+
+          if [ "$code" = "404" ]; then
+            echo "::error title=GitHub Pages is not switched on::$GITHUB_REPOSITORY has no Pages site, so this workflow has nowhere to publish. Open Settings -> Pages -> Build and deployment and set Source to \"GitHub Actions\". A private repository also needs GitHub Pro, Team or Enterprise Cloud; a public one does not."
+            exit 1
+          fi
+
+          if [ "$code" != "200" ]; then
+            echo "::warning title=Could not read the Pages configuration::GitHub answered HTTP $code to GET $api. Continuing — the deploy step will report the authoritative error."
+            exit 0
+          fi
+
+          build_type=$(python3 -c "import json;print(json.load(open('$RUNNER_TEMP/pages.json')).get('build_type') or '')")
+          html_url=$(python3 -c "import json;print(json.load(open('$RUNNER_TEMP/pages.json')).get('html_url') or '')")
+          echo "Pages is switched on: build_type=$build_type, site=$html_url" >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "$build_type" != "workflow" ]; then
+            echo "::error title=Pages builds from a branch, not from Actions::This repository has Pages set to build from a branch (build_type=$build_type), so this workflow cannot publish to it. Open Settings -> Pages -> Build and deployment and set Source to \"GitHub Actions\"."
+            exit 1
+          fi
+          echo "Pages is switched on and builds from GitHub Actions ($html_url)."
+
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
