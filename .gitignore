@@ -1,0 +1,7 @@
+# Local builds and tool output
+_site/
+node_modules/
+
+# OS noise
+.DS_Store
+Thumbs.db

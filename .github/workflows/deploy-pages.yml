@@ -1,0 +1,96 @@
+# Build and deploy the landing page to GitHub Pages.
+#
+# Every push to `main` publishes this repository as a static site, so
+# colleagues only have to commit HTML — nothing else is required of them.
+#
+# ONE-TIME SETUP, which cannot be done from a file:
+#   Settings -> Pages -> Source = "GitHub Actions"
+# Until that is set, the deploy job stops at "Setup Pages" with
+# "Get Pages site failed. Please verify that the repository has Pages enabled
+# and configured to build using GitHub Actions".
+#
+# SITE_DIR is the directory that becomes the web root — the repository root
+# today. Change it (here, in one place) if the page ever moves into a build
+# output directory such as `dist/` or `public/`.
+name: Deploy landing page to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  SITE_DIR: .
+
+# The workflow reads the repository; the deploy job below adds the two scopes
+# Pages needs, and adds them for that job only.
+permissions:
+  contents: read
+
+jobs:
+  # Runs on pull requests as well, so a broken publish root is caught before
+  # the merge instead of after — when the live site would be the one 404ing.
+  check:
+    name: Check the site
+    runs-on: ubuntu-latest
+    concurrency:
+      group: check-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: The web root must contain an index.html
+        run: |
+          if [ ! -f "$SITE_DIR/index.html" ]; then
+            echo "::error title=No index.html::$SITE_DIR/index.html does not exist, so the deployed site would 404 at its root. Commit an index.html there, or point SITE_DIR at the directory that holds it in .github/workflows/deploy-pages.yml."
+            exit 1
+          fi
+          {
+            echo "Publishing \`$SITE_DIR\` — top level:"
+            echo '```'
+            ls -A "$SITE_DIR"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  deploy:
+    name: Deploy
+    needs: check
+    # A pull request only gets checked. A manual run from the Actions tab
+    # deploys whatever ref it was started on, which is the escape hatch for
+    # previewing a branch.
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    # Land a deployment completely once it starts: a half-published landing
+    # page is worse than a stale one. Runs queue behind each other rather
+    # than cancelling.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # Top-level dotfiles and dot-directories (.git, .github, .agents) are
+      # excluded by this action itself, so nothing here needs filtering.
+      # If the page ever gains files whose names start with `_`, add an empty
+      # `.nojekyll` beside index.html so a switch to branch-based publishing
+      # cannot swallow them.
+      - name: Upload the site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.SITE_DIR }}
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v5
