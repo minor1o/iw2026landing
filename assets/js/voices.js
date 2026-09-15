@@ -5,11 +5,11 @@
  /* ---------- farm voices ---------- */
  var quotes = [
   [
-   "We already have collars for activity and chewing, but they are inconvenient for heat and we do not trust them. Pedometers were tried and they got lost. Skips happen often, and the cost is a longer service period, extra hormones and less milk. Health and heat monitoring in one device would be ideal.",
+   "We already have collars for activity and chewing, but they are inconvenient for the fertile period and we do not trust them. Pedometers were tried and they got lost. Skips happen often, and the cost is a longer service period, extra hormones and less milk. Health and fertility monitoring in one device would be ideal.",
    "Plemzavod Maisky, breeding plant<br>interviewed by Anastasia, spring 2026",
   ],
   [
-   "Our insemination bulls find heat faster and more accurately than people do. But there are still misses, especially in winter, when visibility is worse and there is less time to watch. We are not using devices yet, but we plan to, for the winter period and for the new buildings.",
+   "Our insemination bulls find the fertile period faster and more accurately than people do. But there are still misses, especially in winter, when visibility is worse and there is less time to watch. We are not using devices yet, but we plan to, for the winter period and for the new buildings.",
    "Golden Calf, farm<br>interviewed by Anastasia, spring 2026",
   ],
   [
@@ -17,7 +17,7 @@
    "Farm of Sokolova Ekaterina Nikolaevna<br>interviewed by Anastasia, spring 2026",
   ],
   [
-   "Collars would make our lives easier. It often happens that we almost blindly inseminate a cow, because it is time according to the calendar, but there are no signs of heat. So we inseminate two or three times across two days to raise the chances.",
+   "Collars would make our lives easier. It often happens that we almost blindly inseminate a cow, because it is time according to the calendar, but she shows no signs of a fertile period. So we inseminate two or three times across two days to raise the chances.",
    "Veterinary student, cattle specialisation<br>advisor to the project, name withheld at her request",
   ],
  ];
@@ -62,7 +62,7 @@
    n: "A person watching",
    how: "Staff watch the herd and mark the cows that stand to be mounted, usually twice a day between everything else that needs doing.",
    miss:
-    "Signs last six to eight hours and most of them fall at night. A third of cows barely show anything at all, and in hard frost the miss rate climbs to 83 percent.",
+    "Signs last six and a half hours on average and most of them fall at night. More than a third of cows never stand to be mounted at all, and in hard frost the miss rate climbs to 83 percent.",
    caps: [0, 0, 0, 0, 1, 1],
    src: "",
   },
@@ -78,7 +78,7 @@
    n: "Leg pedometer",
    how: "A tag on the leg counts steps and flags the cow when today's count jumps above her normal. IceQube, RumiWatch, AfiAct II, Nedap Smarttag Leg and GEA CowScout Leg are the five on the market, and each one declares a two to ten year battery and a proprietary radio link to a receiver in the barn.",
    miss:
-    "Silent heat has few extra steps, so the quiet third stays invisible. No feeding context, no sound, and the tags get lost in bedding and slurry.",
+    "A quiet fertile period shows in few extra steps, so those cows stay invisible. No feeding context, no sound, and the tags get lost in bedding and slurry.",
    caps: [1, 1, 0, 0, 1, 1],
    src: "https://www.afimilk.com/en/afiact-ii/",
    srcName: "Afimilk AfiAct II",
@@ -103,7 +103,7 @@
   },
   {
    n: "Vaginal probe",
-   how: "A probe sits in the vagina and reads temperature directly. Medria's Vel'Phone and Cow Call, which texts you when the device is pushed out, both use it to predict calving rather than heat.",
+   how: "A probe sits in the vagina and reads temperature directly. Medria's Vel'Phone and Cow Call, which texts you when the device is pushed out, both use it to predict calving rather than the fertile period.",
    miss:
     "Invasive, awkward to service and hard to scale across a herd. It measures no activity, so it tells you nothing about how she is behaving.",
    caps: [1, 0, 1, 0, 1, 0],
@@ -112,7 +112,7 @@
   },
   {
    n: "Imported neck collar",
-   how: "The strongest competitor. Allflex SCR HR-LDn, Lely Qwes HR, Nedap Smarttag Neck, GEA CowScout Neck, AfiCollar, MooMonitor+ and Medria's Axel all measure activity and rumination and score heat on the vendor's own model. Most declare five to ten year batteries and send data by proprietary radio to a receiver in the barn. Allflex and Lely also fit a microphone, and Cowlar adds a temperature sensor.",
+   how: "The strongest competitor. Allflex SCR HR-LDn, Lely Qwes HR, Nedap Smarttag Neck, GEA CowScout Neck, AfiCollar, MooMonitor+ and Medria's Axel all measure activity and rumination and score the fertile period on the vendor's own model. Most declare five to ten year batteries and send data by proprietary radio to a receiver in the barn. Allflex and Lely also fit a microphone, and Cowlar adds a temperature sensor.",
    miss:
     "The model is tuned for herds that are not yours, and you cannot read it. Allflex and Lely listen for chewing and rumination, the same signals we use, so the difference is not the sensor. The receivers have to be installed in the barn before anything works, and the software stays the vendor's.",
    caps: [1, 1, 1, 1, 0, 1],
