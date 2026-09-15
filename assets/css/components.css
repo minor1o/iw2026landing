@@ -1251,6 +1251,14 @@ figure figcaption {
 .cta-line a:hover {
   filter: brightness(1.15);
 }
+/* The call to action carries real sentences, not just one headline. They were
+   landing in .cta-line and rendering as 21px bold display type — a wall of it. */
+.cta-body {
+  margin: 16px 0 0;
+  color: var(--steel);
+  font-size: 16.5px;
+  max-width: 60ch;
+}
 .cta-form {
   margin-top: 20px;
   display: flex;
