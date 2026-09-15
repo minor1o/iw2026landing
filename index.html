@@ -586,13 +586,18 @@
     <h3 class="h-sub" style="margin-top:80px">Interested in Cowllar for your farm?</h3>
 
     <!-- RUBRIC 6 — Make the next step easy: the call to action.
-         The reviewed copy says enquiries are not open yet, so there is deliberately no live
-         contact route here. When they open, this is where the address and the form go. -->
+         The form is deliberately inert (onsubmit returns false): there is no backend yet, and
+         cowllar.com has no mail server, so a clickable address would bounce instead. -->
     <div class="cta-box">
-      <p class="cta-line">Email enquiries will open when Area 51 is ready to receive them.</p>
+      <p class="cta-line">Leave your address and we will email you when enquiries open.</p>
+      <form class="cta-form" onsubmit="return false">
+        <label for="ctaEmail">Your email</label>
+        <input id="ctaEmail" name="email" type="email" placeholder="you@yourfarm.ru" autocomplete="email">
+        <button class="btn" type="submit">Email me</button>
+      </form>
+      <p class="cta-note">Prototype: this button is a demo and does not send anything yet.</p>
       <p class="cta-body">The contact option will invite farm owners and managers to send their animal species, herd size, housing system and current method of detecting oestrus.</p>
       <p class="cta-body">Describe one recurring problem: an animal whose heat goes unnoticed, difficulty observing the herd at night, or uncertainty about when to inseminate. That is what will tell us whether the collar fits the way your farm works.</p>
-      <p class="cta-note">Cowllar is currently in development. Email enquiries are not yet open.</p>
     </div>
   </div>
 </section>
