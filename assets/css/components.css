@@ -46,14 +46,14 @@
 .brand span {
   font-family: var(--mono);
   font-weight: 400;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--straw);
   letter-spacing: 0.14em;
 }
 .bar nav {
   display: flex;
   gap: 26px;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--steel);
 }
 .bar nav a {
@@ -103,7 +103,7 @@ html[data-theme="lemon"] .bar:not(.solid) .themes button[aria-pressed="true"] {
   align-items: center;
   gap: 6px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   color: var(--steel);
   padding: 6px 10px;
   border-radius: 2px;
@@ -162,7 +162,7 @@ html[data-theme="lemon"] .bar:not(.solid) .themes button[aria-pressed="true"] {
   align-items: center;
   gap: 10px;
   color: var(--steel);
-  font-size: 12px;
+  font-size: 14px;
   font-family: var(--mono);
   opacity: 0.55;
   transition:
@@ -268,7 +268,7 @@ html[data-theme="lemon"] .bar:not(.solid) .themes button[aria-pressed="true"] {
   background: var(--straw);
   color: var(--btn-ink);
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   text-decoration: none;
   transition:
     transform 0.2s,
@@ -317,7 +317,7 @@ html[data-theme="lemon"] .bar:not(.solid) .themes button[aria-pressed="true"] {
   bottom: 150px;
   z-index: 4;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   color: rgba(242, 239, 230, 0.72);
   text-align: right;
   line-height: 1.5;
@@ -327,7 +327,7 @@ html[data-theme="lemon"] .bar:not(.solid) .themes button[aria-pressed="true"] {
   align-items: center;
   gap: 9px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.16em;
   color: var(--straw);
   margin-bottom: 24px;
@@ -377,7 +377,7 @@ html[data-theme="lemon"] .bar:not(.solid) .themes button[aria-pressed="true"] {
 .readout span {
   display: block;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 13px;
   color: color-mix(in srgb, var(--panel-ink) 60%, transparent);
   letter-spacing: 0.08em;
 }
@@ -493,7 +493,7 @@ html[data-theme="lemon"] .bar:not(.solid) .themes button[aria-pressed="true"] {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--steel);
   margin-bottom: 12px;
 }
@@ -550,7 +550,7 @@ input[type="range"]::-moz-range-thumb {
 .bill .caption {
   margin-top: 14px;
   color: var(--steel);
-  font-size: 15px;
+  font-size: 16px;
   max-width: 40ch;
 }
 .bill .sub-metrics {
@@ -561,7 +561,7 @@ input[type="range"]::-moz-range-thumb {
 }
 .bill .sub-metrics div span {
   display: block;
-  font-size: 13px;
+  font-size: 14.5px;
   color: var(--steel);
 }
 .bill .sub-metrics div b {
@@ -588,7 +588,7 @@ input[type="range"]::-moz-range-thumb {
   display: block;
 }
 .facts p {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--steel);
   margin-top: 8px;
 }
@@ -612,7 +612,7 @@ input[type="range"]::-moz-range-thumb {
 }
 .promise .n {
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 14.5px;
   color: var(--straw);
   padding-top: 8px;
 }
@@ -627,7 +627,7 @@ input[type="range"]::-moz-range-thumb {
   display: inline-block;
   margin-top: 14px;
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--milk);
   border: 1px solid var(--line-strong);
   padding: 5px 11px;
@@ -693,7 +693,7 @@ input[type="range"]::-moz-range-thumb {
 .part span {
   display: block;
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--steel);
   margin-top: 3px;
 }
@@ -765,7 +765,7 @@ input[type="range"]::-moz-range-thumb {
 .step em {
   font-family: var(--mono);
   font-style: normal;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--straw);
 }
 .step h4 {
@@ -773,7 +773,7 @@ input[type="range"]::-moz-range-thumb {
   margin-top: 10px;
 }
 .step p {
-  font-size: 13.5px;
+  font-size: 15px;
   color: var(--steel);
   margin-top: 8px;
 }
@@ -824,7 +824,7 @@ input[type="range"]::-moz-range-thumb {
   margin: 14px 0 0;
   padding-left: 18px;
   color: var(--steel);
-  font-size: 14.5px;
+  font-size: 15.5px;
 }
 .stage .note li {
   margin-bottom: 6px;
@@ -849,12 +849,12 @@ input[type="range"]::-moz-range-thumb {
 }
 .bar-label {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   fill: var(--steel);
 }
 .bar-val {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 14px;
   fill: var(--milk);
 }
 .bar-rect {
@@ -886,7 +886,7 @@ input[type="range"]::-moz-range-thumb {
   padding: 9px 0 9px 22px;
   position: relative;
   color: var(--steel);
-  font-size: 15px;
+  font-size: 16px;
   border-bottom: 1px solid var(--line);
 }
 .two-col li:last-child {
@@ -901,7 +901,7 @@ input[type="range"]::-moz-range-thumb {
   left: 0;
   top: 9px;
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 14.5px;
 }
 .ok li::before {
   content: "+";
@@ -940,7 +940,7 @@ input[type="range"]::-moz-range-thumb {
   font-size: 22px;
 }
 .sim-top p {
-  font-size: 13.5px;
+  font-size: 15px;
   color: var(--steel);
   margin-top: 6px;
 }
@@ -958,14 +958,14 @@ input[type="range"]::-moz-range-thumb {
   padding: 11px 20px;
   border-radius: 2px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
 }
 .play:hover {
   filter: brightness(1.12);
 }
 .clock {
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 15px;
   color: var(--steel);
 }
 .sim svg {
@@ -988,7 +988,7 @@ input[type="range"]::-moz-range-thumb {
   flex-wrap: wrap;
   margin-top: 14px;
   font-family: var(--mono);
-  font-size: 11.5px;
+  font-size: 13.5px;
   color: var(--steel);
 }
 .sim-legend i {
@@ -1026,12 +1026,12 @@ input[type="range"]::-moz-range-thumb {
 }
 .alert-card p {
   color: var(--steel);
-  font-size: 15px;
+  font-size: 16px;
   margin-top: 8px;
 }
 .alert-card .stamp {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--heat);
   margin-bottom: 8px;
 }
@@ -1080,7 +1080,7 @@ input[type="range"]::-moz-range-thumb {
   bottom: 0;
   padding: 10px 12px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   background: linear-gradient(
     180deg,
     rgba(10, 16, 14, 0),
@@ -1118,7 +1118,7 @@ dialog.light img {
 }
 dialog.light p {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--steel);
   padding: 14px 4px;
   text-align: center;
@@ -1128,7 +1128,7 @@ dialog.light .close {
   top: -6px;
   right: 0;
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--steel);
 }
 
@@ -1153,14 +1153,14 @@ dialog.light .close {
 }
 .stats span {
   display: block;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--steel);
   margin-top: 8px;
 }
 .stats small {
   display: block;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   color: rgba(147, 164, 158, 0.75);
   margin-top: 10px;
 }
@@ -1178,7 +1178,7 @@ figure img {
 }
 figure figcaption {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--steel);
   padding-top: 12px;
   line-height: 1.55;
@@ -1203,7 +1203,7 @@ figure figcaption {
 .road li {
   list-style: none;
   color: var(--steel);
-  font-size: 15px;
+  font-size: 16px;
   padding: 7px 0 7px 18px;
   position: relative;
 }
@@ -1261,7 +1261,7 @@ figure figcaption {
 .cta-form label {
   flex: 1 1 100%;
   color: var(--steel);
-  font-size: 14px;
+  font-size: 15px;
 }
 .cta-form input {
   flex: 1 1 250px;
@@ -1272,7 +1272,7 @@ figure figcaption {
   border-radius: 2px;
   color: var(--milk);
   font: inherit;
-  font-size: 15px;
+  font-size: 16px;
 }
 .cta-form input::placeholder {
   color: var(--steel);
@@ -1284,7 +1284,7 @@ figure figcaption {
 .cta-note {
   margin: 14px 0 0;
   color: var(--steel);
-  font-size: 13px;
+  font-size: 14.5px;
 }
 
 /* ---------- footer ---------- */
@@ -1311,7 +1311,7 @@ footer h4 {
 footer p,
 footer li {
   color: var(--steel);
-  font-size: 14px;
+  font-size: 15px;
 }
 footer ol {
   margin: 0;
@@ -1330,6 +1330,6 @@ footer li {
   gap: 18px;
   flex-wrap: wrap;
   font-family: var(--mono);
-  font-size: 11.5px;
+  font-size: 13.5px;
   color: var(--steel);
 }

@@ -1,9 +1,5 @@
 /* Cowllar, Area 51 :: herd loss calculator */
 (() => {
-  var CW = window.CW;
-  var reduce = CW.reduce,
-    P = CW.P,
-    mk = CW.mk;
   /* ---------- cost calculator ---------- */
   var herd = document.getElementById("herd"),
     miss = document.getElementById("miss");

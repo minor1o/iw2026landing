@@ -1,9 +1,7 @@
 /* Cowllar, Area 51 :: farm interviews and the rival comparison */
 (() => {
  var CW = window.CW;
- var reduce = CW.reduce,
-  P = CW.P,
-  mk = CW.mk;
+ var reduce = CW.reduce;
  /* ---------- farm voices ---------- */
  var quotes = [
   [
@@ -39,7 +37,7 @@
    setTimeout(
     () => {
      t.textContent = q[0];
-     c.innerHTML = q[1];
+     setLines(c, q[1]);
      t.style.transition = "opacity .3s";
      c.style.transition = "opacity .3s";
      t.style.opacity = 1;
@@ -121,14 +119,21 @@
   },
  ];
  var US = [1, 1, 1, 1, 1, 1];
- function dot(on) {
-  return (
-   '<span class="dot ' +
-   (on ? "on" : "off") +
-   '" role="img" aria-label="' +
-   (on ? "yes" : "no") +
-   '"></span>'
-  );
+ // Build nodes rather than HTML strings. The content here is fixed, but keeping
+ // the sinks out of the file means it stays safe if the data ever moves.
+ function dotEl(on) {
+  var s = document.createElement("span");
+  s.className = "dot " + (on ? "on" : "off");
+  s.setAttribute("role", "img");
+  s.setAttribute("aria-label", on ? "yes" : "no");
+  return s;
+ }
+ function setLines(el, text) {
+  el.replaceChildren();
+  text.split("<br>").forEach((line, i) => {
+   if (i) el.appendChild(document.createElement("br"));
+   el.appendChild(document.createTextNode(line));
+  });
  }
  function showRival(i) {
   var r = rivalData[i];
@@ -137,18 +142,23 @@
   document.getElementById("rvMiss").textContent = r.miss;
   document.getElementById("rvPrice").textContent = r.price;
   document.getElementById("rvCol").textContent = r.n.toLowerCase();
-  var rows = "";
+  var nameCell = (text) => {
+   var td = document.createElement("td");
+   td.textContent = text;
+   return td;
+  };
+  var dotCell = (on) => {
+   var td = document.createElement("td");
+   td.appendChild(dotEl(on));
+   return td;
+  };
+  var body = document.getElementById("capBody");
+  body.replaceChildren();
   for (var k = 0; k < CAPS.length; k++) {
-   rows +=
-    "<tr><td>" +
-    CAPS[k] +
-    "</td><td>" +
-    dot(r.caps[k]) +
-    "</td><td>" +
-    dot(US[k]) +
-    "</td></tr>";
+   var tr = document.createElement("tr");
+   tr.append(nameCell(CAPS[k]), dotCell(r.caps[k]), dotCell(US[k]));
+   body.appendChild(tr);
   }
-  document.getElementById("capBody").innerHTML = rows;
  }
  var rivalBtns = Array.prototype.slice.call(
   document.querySelectorAll("#rivalList button"),

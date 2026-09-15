@@ -108,7 +108,7 @@
       y: 22,
       "text-anchor": "middle",
       fill: P.heat,
-      "font-size": 11,
+      "font-size": 13,
       "font-family": "IBM Plex Mono, monospace",
     });
     wl.textContent = "insemination window";
@@ -132,7 +132,7 @@
         y: SH - 28,
         "text-anchor": "middle",
         fill: P.steel,
-        "font-size": 11,
+        "font-size": 13,
         "font-family": "IBM Plex Mono, monospace",
       });
       t.textContent = "h" + h;
@@ -192,7 +192,7 @@
         x: 8,
         y: tr.y + 12,
         fill: P.steel,
-        "font-size": 10.5,
+        "font-size": 13,
         "font-family": "IBM Plex Mono, monospace",
       });
       lb.textContent = tr.label;
@@ -202,7 +202,7 @@
       x: 8,
       y: sy + 12,
       fill: P.milk,
-      "font-size": 10.5,
+      "font-size": 13,
       "font-family": "IBM Plex Mono, monospace",
     });
     sl.textContent = "score";
@@ -238,7 +238,7 @@
       x: cx - 10,
       y: 58,
       fill: P.heat,
-      "font-size": 11,
+      "font-size": 13,
       "text-anchor": "end",
       "font-family": "IBM Plex Mono, monospace",
     });
@@ -298,13 +298,21 @@
     scrub.value = v + 1;
     renderSim(+scrub.value);
     raf = setTimeout(() => {
-      requestAnimationFrame(step);
+      // Hold the frame handle, not the timer handle, so stop() can cancel the
+      // frame that is already queued.
+      raf = requestAnimationFrame(step);
     }, 95);
   }
   function stop() {
     playing = false;
     playBtn.textContent = "Play";
-    if (raf) clearTimeout(raf);
+    if (raf) {
+      // raf holds a timer handle or a frame handle depending on the phase.
+      // Clearing both is harmless and makes Pause take effect immediately.
+      clearTimeout(raf);
+      cancelAnimationFrame(raf);
+      raf = null;
+    }
   }
   if (simSvg) {
     buildSim();
@@ -319,6 +327,8 @@
         en.forEach((e) => {
           if (!e.isIntersecting || simSeen) return;
           simSeen = true;
+          // Reduced motion: arrive on the finished chart rather than animate
+          // unrequested. Play replays it on request.
           if (reduce) {
             scrub.value = N - 1;
             renderSim(N - 1);
@@ -339,12 +349,9 @@
       if (+scrub.value >= N - 1) scrub.value = 0;
       playing = true;
       playBtn.textContent = "Pause";
-      if (reduce) {
-        scrub.value = N - 1;
-        renderSim(N - 1);
-        stop();
-        return;
-      }
+      // Deliberately not gated on `reduce`. Reduced motion keeps this section
+      // still until asked (see the observer below). A press of Play is the ask,
+      // and refusing it left the button doing nothing at all.
       step();
     });
   }
