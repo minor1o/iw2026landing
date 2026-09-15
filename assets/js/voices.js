@@ -6,15 +6,15 @@
  var quotes = [
   [
    "We already have collars for activity and chewing, but they are inconvenient for heat and we do not trust them. Pedometers were tried and they got lost. Skips happen often, and the cost is a longer service period, extra hormones and less milk. Health and heat monitoring in one device would be ideal.",
-   "Plemzavod Maisky, breeding plant<br>interviewed by Anastasiya, spring 2026",
+   "Plemzavod Maisky, breeding plant<br>interviewed by Anastasia, spring 2026",
   ],
   [
    "Our insemination bulls find heat faster and more accurately than people do. But there are still misses, especially in winter, when visibility is worse and there is less time to watch. We are not using devices yet, but we plan to, for the winter period and for the new buildings.",
-   "Golden Calf, farm<br>interviewed by Anastasiya, spring 2026",
+   "Golden Calf, farm<br>interviewed by Anastasia, spring 2026",
   ],
   [
    "We work visually and with bulls. Skips happen, we have no exact numbers but they happen. For twelve heads the payback is critical: the cost, the complexity of putting it in, and whether we can trust the data enough that it works no worse than the bulls.",
-   "Farm of Sokolova Ekaterina Nikolaevna<br>interviewed by Anastasiya, spring 2026",
+   "Farm of Sokolova Ekaterina Nikolaevna<br>interviewed by Anastasia, spring 2026",
   ],
   [
    "Collars would make our lives easier. It often happens that we almost blindly inseminate a cow, because it is time according to the calendar, but there are no signs of heat. So we inseminate two or three times across two days to raise the chances.",
