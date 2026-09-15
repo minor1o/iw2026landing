@@ -10,4 +10,4 @@
 .h-sub{font-family:var(--display);font-weight:700;font-size:23px;letter-spacing:-.02em}
 .mark{color:var(--straw)}
 .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
-.sec-tag{font-family:var(--mono);font-size:15.5px;color:var(--steel);letter-spacing:.06em;margin-bottom:18px}
+.sec-tag{font-family:var(--mono);font-size:16.5px;color:var(--steel);letter-spacing:.06em;margin-bottom:18px}
