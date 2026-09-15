@@ -633,35 +633,8 @@ figure figcaption {
     grid-template-columns: 1fr;
   }
 }
-.team {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 34px;
-  margin-top: 40px;
-}
-@media (max-width: 860px) {
-  .team {
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-}
-.team .m {
-  border-top: 1px solid var(--line-strong);
-  padding-top: 14px;
-}
-.team .m b {
-  font-family: var(--display);
-  font-size: 18px;
-  font-weight: 700;
-  display: block;
-  letter-spacing: -0.02em;
-}
-.team .m span {
-  display: block;
-  color: var(--steel);
-  font-size: 14px;
-  margin-top: 6px;
-}
+/* .team rules removed with the team list (2026-09-15) — the call to action
+   styles live in components.css. */
 
 /* ---------- footer ---------- */
 footer {

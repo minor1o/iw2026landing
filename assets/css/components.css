@@ -1225,34 +1225,66 @@ figure figcaption {
     grid-template-columns: 1fr;
   }
 }
-.team {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 34px;
-  margin-top: 40px;
+/* ---------- call to action (rubric 6) ---------- */
+.cta-box {
+  margin-top: 30px;
+  max-width: 640px;
+  padding: 28px 30px;
+  background: var(--barn-raise);
+  border: 1px solid var(--line-strong);
+  border-top: 3px solid var(--straw);
+  border-radius: 2px;
 }
-@media (max-width: 860px) {
-  .team {
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-}
-.team .m {
-  border-top: 1px solid var(--line-strong);
-  padding-top: 14px;
-}
-.team .m b {
+.cta-line {
+  margin: 0;
   font-family: var(--display);
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 700;
-  display: block;
   letter-spacing: -0.02em;
+  color: var(--milk);
 }
-.team .m span {
-  display: block;
+.cta-line a {
+  color: var(--straw);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.cta-line a:hover {
+  filter: brightness(1.15);
+}
+.cta-form {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.cta-form label {
+  flex: 1 1 100%;
   color: var(--steel);
   font-size: 14px;
-  margin-top: 6px;
+}
+.cta-form input {
+  flex: 1 1 250px;
+  min-width: 0;
+  padding: 13px 15px;
+  background: var(--barn);
+  border: 1px solid var(--line-strong);
+  border-radius: 2px;
+  color: var(--milk);
+  font: inherit;
+  font-size: 15px;
+}
+.cta-form input::placeholder {
+  color: var(--steel);
+}
+.cta-form input:focus-visible {
+  outline: 2px solid var(--straw);
+  outline-offset: 2px;
+}
+.cta-note {
+  margin: 14px 0 0;
+  color: var(--steel);
+  font-size: 13px;
 }
 
 /* ---------- footer ---------- */

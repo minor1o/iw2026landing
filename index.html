@@ -53,6 +53,7 @@
 <main>
 
 <!-- ================= HERO ================= -->
+
 <section class="hero" id="top">
   <div class="hero-copy">
     <div class="inner">
@@ -126,6 +127,7 @@
 
 
 <!-- ================= FARM VOICES ================= -->
+
 <section class="sec deep" id="farms">
   <div class="wrap">
     <div class="head-row">
@@ -173,6 +175,7 @@
 </section>
 
 <!-- ================= PROMISE ================= -->
+
 <section class="sec" id="promise">
   <div class="wrap">
     <div class="head-row">
@@ -256,6 +259,7 @@
 </section>
 
 <!-- ================= DEVICE ================= -->
+
 <section class="sec raise" id="device">
   <div class="wrap">
     <div class="head-row">
@@ -349,6 +353,7 @@
 </section>
 
 <!-- ================= SCIENCE ================= -->
+
 <section class="sec" id="science">
   <div class="wrap">
     <div class="head-row">
@@ -422,6 +427,7 @@
 </section>
 
 <!-- ================= SEE IT WORK ================= -->
+
 <section class="sec raise" id="see">
   <div class="wrap">
     <div class="head-row">
@@ -485,6 +491,7 @@
 </section>
 
 <!-- ================= PROOF ================= -->
+
 <section class="sec" id="proof">
   <div class="wrap">
     <div class="head-row">
@@ -524,6 +531,7 @@
 </section>
 
 <!-- ================= NEXT ================= -->
+
 <section class="sec raise" id="next">
   <div class="wrap">
     <div class="head-row">
@@ -562,13 +570,18 @@
     </div>
 
     <h3 class="h-sub" style="margin-top:80px">Area 51</h3>
-    <div class="team">
-      <div class="m"><b>Akinrinsola Agbelusi</b><span>Hardware, firmware, sensors, machine learning</span></div>
-      <div class="m"><b>Aminu Taura</b><span>Hardware, enclosure design and printing</span></div>
-      <div class="m"><b>Iman Chantieva</b><span>Feature engineering, labelling, model training</span></div>
-      <div class="m"><b>Dmitrii Iarchuk</b><span>Data pipeline, API, dashboard</span></div>
-      <div class="m"><b>Anastasiya Mikhajlenko</b><span>Customer research, market analysis</span></div>
-      <div class="m"><b>Veterinary advisor</b><span>Cattle specialisation, bridge between the project and the farms</span></div>
+
+    <!-- RUBRIC 6 — Make the next step easy: the call to action.
+         Two routes, both one action deep: email us, or leave an address and we email you.
+         The form is intentionally inert (onsubmit returns false) — no backend on a prototype. -->
+    <div class="cta-box">
+      <p class="cta-line">Interested? Email us: <a href="mailto:area51@cowllar.com">area51@cowllar.com</a></p>
+      <form class="cta-form" onsubmit="return false">
+        <label for="ctaEmail">Or leave your address and we will email you</label>
+        <input id="ctaEmail" name="email" type="email" placeholder="you@yourfarm.ru" autocomplete="email">
+        <button class="btn" type="submit">Email me</button>
+      </form>
+      <p class="cta-note">Prototype: this button is a demo and does not send anything yet.</p>
     </div>
   </div>
 </section>
