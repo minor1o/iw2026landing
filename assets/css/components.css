@@ -1098,10 +1098,22 @@ input[type="range"]::-moz-range-thumb {
 .gal.wide button {
   aspect-ratio: 16 / 9;
 }
+/* Two dashboard screenshots side by side. Without this rule "gal two" falls back
+   to the four column square .gal grid, which is what it did on the live page. */
+.gal.two {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.gal.two button {
+  aspect-ratio: 16 / 9;
+}
 @media (max-width: 860px) {
   .gal,
   .gal.wide {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .gal.two {
+    grid-template-columns: 1fr;
   }
 }
 dialog.light {
