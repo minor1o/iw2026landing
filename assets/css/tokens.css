@@ -1,64 +1,64 @@
 /* Cowllar, Area 51 :: Colour, type and spacing tokens, plus the three themes */
 
-:root{
-  --barn:#0E1513;
-  --barn-raise:#14201C;
-  --barn-deep:#0A100E;
-  --milk:#F2EFE6;
-  --steel:#93A49E;
-  --straw:#E6A03C;
-  --btn-ink:#17120A;
-  --heat:#FF4D5E;
-  --mint:#63BFA4;
-  --rest:#4C7C8C;
-  --line:rgba(242,239,230,.11);
-  --line-strong:rgba(242,239,230,.22);
-  --panel:#0A100E;
-  --panel-ink:#F2EFE6;
-  --photo:saturate(.86) contrast(1.04) brightness(1.1);
-  --trace1:#E6A03C;
-  --trace2:#63BFA4;
-  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
-  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-  --rail:132px;
-  --maxw:1140px;
+:root {
+  --barn: #0e1513;
+  --barn-raise: #14201c;
+  --barn-deep: #0a100e;
+  --milk: #f2efe6;
+  --steel: #93a49e;
+  --straw: #e6a03c;
+  --btn-ink: #17120a;
+  --heat: #ff4d5e;
+  --mint: #63bfa4;
+  --rest: #4c7c8c;
+  --line: rgba(242, 239, 230, 0.11);
+  --line-strong: rgba(242, 239, 230, 0.22);
+  --panel: #0a100e;
+  --panel-ink: #f2efe6;
+  --photo: saturate(0.86) contrast(1.04) brightness(1.1);
+  --trace1: #e6a03c;
+  --trace2: #63bfa4;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --rail: 132px;
+  --maxw: 1140px;
 }
-html[data-theme="light"]{
-  --barn:#E9EDE5;
-  --barn-raise:#F5F7F1;
-  --barn-deep:#DDE4D9;
-  --milk:#131D18;
-  --steel:#57675F;
-  --straw:#A8620C;
-  --btn-ink:#FFF7EA;
-  --heat:#C42A3C;
-  --mint:#23735A;
-  --rest:#3A5F6E;
-  --line:rgba(19,29,24,.14);
-  --line-strong:rgba(19,29,24,.3);
-  --panel:#101A16;
-  --panel-ink:#F2EFE6;
-  --photo:saturate(1.02) contrast(1.02) brightness(1.02);
-  --trace1:#E6A03C;
-  --trace2:#63BFA4;
+html[data-theme="light"] {
+  --barn: #e9ede5;
+  --barn-raise: #f5f7f1;
+  --barn-deep: #dde4d9;
+  --milk: #131d18;
+  --steel: #57675f;
+  --straw: #a8620c;
+  --btn-ink: #fff7ea;
+  --heat: #c42a3c;
+  --mint: #23735a;
+  --rest: #3a5f6e;
+  --line: rgba(19, 29, 24, 0.14);
+  --line-strong: rgba(19, 29, 24, 0.3);
+  --panel: #101a16;
+  --panel-ink: #f2efe6;
+  --photo: saturate(1.02) contrast(1.02) brightness(1.02);
+  --trace1: #e6a03c;
+  --trace2: #63bfa4;
 }
-html[data-theme="lemon"]{
-  --barn:#F0E04A;
-  --barn-raise:#F8EE83;
-  --barn-deep:#E2CE22;
-  --milk:#16180D;
-  --steel:#5D5A1C;
-  --straw:#16180D;
-  --btn-ink:#F4E559;
-  --heat:#C8102E;
-  --mint:#1F6B3A;
-  --rest:#2F4858;
-  --line:rgba(22,24,13,.18);
-  --line-strong:rgba(22,24,13,.38);
-  --panel:#16180D;
-  --panel-ink:#F4E559;
-  --photo:grayscale(.9) contrast(1.22) brightness(1.06) sepia(.18);
-  --trace1:#F4E559;
-  --trace2:#8FD0A8;
+html[data-theme="lemon"] {
+  --barn: #f0e04a;
+  --barn-raise: #f8ee83;
+  --barn-deep: #e2ce22;
+  --milk: #16180d;
+  --steel: #5d5a1c;
+  --straw: #16180d;
+  --btn-ink: #f4e559;
+  --heat: #c8102e;
+  --mint: #1f6b3a;
+  --rest: #2f4858;
+  --line: rgba(22, 24, 13, 0.18);
+  --line-strong: rgba(22, 24, 13, 0.38);
+  --panel: #16180d;
+  --panel-ink: #f4e559;
+  --photo: grayscale(0.9) contrast(1.22) brightness(1.06) sepia(0.18);
+  --trace1: #f4e559;
+  --trace2: #8fd0a8;
 }
