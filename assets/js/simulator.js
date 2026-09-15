@@ -108,7 +108,7 @@
       y: 22,
       "text-anchor": "middle",
       fill: P.heat,
-      "font-size": 13,
+      "font-size": 15,
       "font-family": "IBM Plex Mono, monospace",
     });
     wl.textContent = "insemination window";
@@ -132,7 +132,7 @@
         y: SH - 28,
         "text-anchor": "middle",
         fill: P.steel,
-        "font-size": 13,
+        "font-size": 15,
         "font-family": "IBM Plex Mono, monospace",
       });
       t.textContent = "h" + h;
@@ -192,7 +192,7 @@
         x: 8,
         y: tr.y + 12,
         fill: P.steel,
-        "font-size": 13,
+        "font-size": 15,
         "font-family": "IBM Plex Mono, monospace",
       });
       lb.textContent = tr.label;
@@ -202,7 +202,7 @@
       x: 8,
       y: sy + 12,
       fill: P.milk,
-      "font-size": 13,
+      "font-size": 15,
       "font-family": "IBM Plex Mono, monospace",
     });
     sl.textContent = "score";
@@ -238,7 +238,7 @@
       x: cx - 10,
       y: 58,
       fill: P.heat,
-      "font-size": 13,
+      "font-size": 15,
       "text-anchor": "end",
       "font-family": "IBM Plex Mono, monospace",
     });

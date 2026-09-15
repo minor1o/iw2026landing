@@ -120,7 +120,7 @@
         x: 24,
         y: H - 8,
         fill: P.steel,
-        "font-size": 13,
+        "font-size": 15,
         "font-family": "IBM Plex Mono, monospace",
       });
       lab.textContent = "2 s windows, 50 percent overlap";
@@ -151,7 +151,7 @@
           x: x,
           y: H - 12,
           fill: P.steel,
-          "font-size": 13,
+          "font-size": 15,
           "font-family": "IBM Plex Mono, monospace",
         });
         tx.textContent = c[0] + "  " + Math.round(c[2] * 100) + "%";
@@ -187,7 +187,7 @@
         x: W - 24,
         y: H - 34 - 84,
         fill: P.heat,
-        "font-size": 13,
+        "font-size": 15,
         "text-anchor": "end",
         "font-family": "IBM Plex Mono, monospace",
       });
@@ -271,9 +271,9 @@
     locoSvg.appendChild(
       mk("rect", {
         x: padL + 3,
-        y: meanY - 15,
-        width: 92,
-        height: 17,
+        y: meanY - 17,
+        width: 122,
+        height: 20,
         fill: P.barn,
       }),
     );
