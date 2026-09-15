@@ -236,6 +236,9 @@ html[data-theme="lemon"] .bar:not(.solid) .themes button[aria-pressed="true"] {
 .hero h1 .line:nth-child(3) b {
   animation-delay: 0.18s;
 }
+.hero h1 .line:nth-child(4) b {
+  animation-delay: 0.27s;
+}
 @keyframes rise {
   to {
     transform: translateY(0);
