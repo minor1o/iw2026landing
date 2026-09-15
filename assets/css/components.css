@@ -468,6 +468,16 @@ html[data-theme="lemon"] .bar:not(.solid) .themes button[aria-pressed="true"] {
   align-items: end;
   margin-bottom: 56px;
 }
+/* A section whose heading needs its explanation underneath rather than beside it,
+   so the two read as one sentence. Used by the cost section. */
+.head-row.stack {
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: start;
+}
+.head-row.stack .lede {
+  max-width: 68ch;
+}
 @media (max-width: 900px) {
   .head-row {
     grid-template-columns: 1fr;
