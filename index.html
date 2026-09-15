@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--
+  Placeholder page. It exists so the Pages workflow has something to publish
+  and so the six content blocks have a shape to be filled in. Replace this
+  whole file once the real copy lands — nothing here is final content.
+
+  The blocks below are the required order from .agents/skills/landing-copy.
+  That skill also carries the two rules the final copy has to satisfy: never
+  frame value around price, and never ship a claim that is not measurable.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Placeholder | IW2026 landing page</title>
+  <!-- Uncomment while this is still a placeholder, then delete the line:
+  <meta name="robots" content="noindex"> -->
+  <style>
+    :root {
+      color-scheme: light dark;
+
+      --surface: light-dark(#fff, #16181d);
+      --raised: light-dark(#f4f5f7, #1e2128);
+      --text: light-dark(#16181d, #f2f3f5);
+      --muted: light-dark(#55606e, #a9b1bd);
+      --line: light-dark(#767c87, #6f7783);
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem 1.25rem 4rem;
+      background: var(--surface);
+      color: var(--text);
+      font-family: system-ui, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    main {
+      max-inline-size: 80ch;
+      margin-inline: auto;
+    }
+
+    h1, h2 {
+      text-wrap: balance;
+      line-height: 1.2;
+    }
+
+    h1 {
+      margin-block: 0 0.5rem;
+      font-size: clamp(1.75rem, 1.25rem + 2vw, 2.5rem);
+    }
+
+    h2 {
+      margin-block: 0 0.25rem;
+      font-size: 1.125rem;
+    }
+
+    p {
+      text-wrap: pretty;
+      margin-block: 0 1rem;
+    }
+
+    .lede {
+      color: var(--muted);
+      font-size: 1.0625rem;
+    }
+
+    /* The placeholder notice is labelled in words, not by colour alone. */
+    .notice {
+      margin-block: 1.5rem;
+      padding: 0.875rem 1rem;
+      background: var(--raised);
+      border: 2px dashed var(--line);
+      border-radius: 0.5rem;
+    }
+
+    .notice p:last-child {
+      margin-block-end: 0;
+    }
+
+    ol {
+      margin: 2rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    li {
+      padding: 0.875rem 1rem;
+      background: var(--raised);
+      border-inline-start: 3px solid var(--line);
+      border-radius: 0.25rem;
+    }
+
+    .hint {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+
+    footer {
+      max-inline-size: 80ch;
+      margin: 3rem auto 0;
+      padding-block-start: 1rem;
+      border-block-start: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>IW2026 landing page</h1>
+    <p class="lede">The written content for this page is still being agreed. What
+    follows is the agreed order of blocks, with each block left empty on purpose.</p>
+
+    <div class="notice">
+      <p><strong>Status: placeholder.</strong> Nobody has reviewed this text,
+      because there is no text yet — only the six headings below. Replace this
+      file with the real page.</p>
+    </div>
+
+    <ol>
+      <li>
+        <h2>1. Company name &amp; slogan</h2>
+        <p class="hint">Empty — pending the content pass.</p>
+      </li>
+      <li>
+        <h2>2. Value proposition</h2>
+        <p class="hint">Empty — the promise made to the customer. Needs the
+        named customer and the specific thing that changes for them.</p>
+      </li>
+      <li>
+        <h2>3. Business thesis</h2>
+        <p class="hint">Empty — how value is created: the solution, the
+        inventive step, the part that is ours and not a commodity.</p>
+      </li>
+      <li>
+        <h2>4. How the solution works</h2>
+        <p class="hint">Empty — how a customer uses it, what success looks
+        like, and what the visuals or the video should show.</p>
+      </li>
+      <li>
+        <h2>5. Call to action</h2>
+        <p class="hint">Empty — the one easy next step, named exactly.</p>
+      </li>
+      <li>
+        <h2>6. Social proof &amp; traction</h2>
+        <p class="hint">Empty — only numbers with a date and a source; no
+        number goes here that nobody can check.</p>
+      </li>
+    </ol>
+  </main>
+
+  <footer>
+    <p>Deployed by <code>.github/workflows/deploy-pages.yml</code> on every push
+    to <code>main</code>.</p>
+  </footer>
+</body>
+</html>
