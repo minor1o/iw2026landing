@@ -276,7 +276,7 @@
       document.getElementById("alertStamp").textContent =
         "score crossed at hour " + ALERT_H;
       document.getElementById("alertTitle").textContent =
-        "Cow 23, inseminate in 12 to 24 hours";
+        "Cow 23: recommended insemination today, 14:00 to 20:00";
       document.getElementById("alertBody").textContent =
         "Movement is running near three times her own baseline, rumination has dropped and skin temperature lifted with it. Three signals agreeing is what raises the flag. A single spike never does.";
     } else {

@@ -54,7 +54,6 @@
   "Reads movement",
   "Reads body temperature",
   "Hears chewing",
-  "Hears calling",
   "Runs without a cloud account",
   "Stays outside the animal",
  ];
@@ -64,7 +63,7 @@
    how: "Staff watch the herd and mark the cows that stand to be mounted, usually twice a day between everything else that needs doing.",
    miss:
     "Signs last six to eight hours and most of them fall at night. A third of cows barely show anything at all, and in hard frost the miss rate climbs to 83 percent.",
-   caps: [0, 0, 0, 0, 0, 1, 1],
+   caps: [0, 0, 0, 0, 1, 1],
    src: "",
   },
   {
@@ -72,7 +71,7 @@
    how: "Ovsynch and its longer variants put the whole group on a fixed hormone schedule so insemination can be booked by calendar instead of by observation.",
    miss:
     "Around 44 percent of cows conceive in the published trials, it needs veterinary time, it works worse on poorly fed herds, and it is invasive by design.",
-   caps: [0, 0, 0, 0, 0, 1, 0],
+   caps: [0, 0, 0, 0, 1, 0],
    src: "",
   },
   {
@@ -80,7 +79,7 @@
    how: "A tag on the leg counts steps and flags the cow when today's count jumps above her normal. IceQube, RumiWatch, AfiAct II, Nedap Smarttag Leg and GEA CowScout Leg are the five on the market, and each one declares a two to ten year battery and a proprietary radio link to a receiver in the barn.",
    miss:
     "Silent heat has few extra steps, so the quiet third stays invisible. No feeding context, no sound, and the tags get lost in bedding and slurry.",
-   caps: [1, 1, 0, 0, 0, 1, 1],
+   caps: [1, 1, 0, 0, 1, 1],
    src: "https://www.afimilk.com/en/afiact-ii/",
    srcName: "Afimilk AfiAct II",
   },
@@ -89,7 +88,7 @@
    how: "A sensor in the ear tracks activity, rumination and ear temperature, then sends behaviour summaries to the vendor's dashboard. CowManager SensOor declares five years of battery, Zoetis Smartbow two and the Allflex eSense Flex tag three.",
    miss:
     "The ear is a noisy place to measure from, temperature at the ear drifts with the weather, and the data lives in a subscription you do not control.",
-   caps: [1, 1, 1, 0, 0, 0, 1],
+   caps: [1, 1, 1, 0, 0, 1],
    src: "https://cowmanager.com/sensoor/",
    srcName: "CowManager SensOor",
   },
@@ -98,7 +97,7 @@
    how: "A capsule sits in the rumen and measures core temperature precisely, with very little movement noise. smaXtec, eCow, Moow and HerdDogg are the four serious ones; the pH versions add rumen pH, and the declared battery runs four to six years.",
    miss:
     "It has to be swallowed and is difficult to take back out. Battery life sets a hard expiry date, and it hears nothing at all.",
-   caps: [1, 0, 1, 0, 0, 1, 0],
+   caps: [1, 0, 1, 0, 1, 0],
    src: "https://smaxtec.com/en/",
    srcName: "smaXtec",
   },
@@ -107,7 +106,7 @@
    how: "A probe sits in the vagina and reads temperature directly. Medria's Vel'Phone and Cow Call, which texts you when the device is pushed out, both use it to predict calving rather than heat.",
    miss:
     "Invasive, awkward to service and hard to scale across a herd. It measures no activity, so it tells you nothing about how she is behaving.",
-   caps: [1, 0, 1, 0, 0, 1, 0],
+   caps: [1, 0, 1, 0, 1, 0],
    src: "https://cowcall.ie/",
    srcName: "Cow Call",
   },
@@ -115,13 +114,13 @@
    n: "Imported neck collar",
    how: "The strongest competitor. Allflex SCR HR-LDn, Lely Qwes HR, Nedap Smarttag Neck, GEA CowScout Neck, AfiCollar, MooMonitor+ and Medria's Axel all measure activity and rumination and score heat on the vendor's own model. Most declare five to ten year batteries and send data by proprietary radio to a receiver in the barn. Allflex and Lely also fit a microphone, and Cowlar adds a temperature sensor.",
    miss:
-    "The model is tuned for herds that are not yours, and you cannot read it. Their microphone is turned to chewing, not to the vocalisation a cow gives off when she is in heat. The receivers have to be installed in the barn before anything works, and the software stays the vendor's.",
-   caps: [1, 1, 1, 1, 0, 0, 1],
+    "The model is tuned for herds that are not yours, and you cannot read it. Allflex and Lely listen for chewing and rumination, the same signals we use, so the difference is not the sensor. The receivers have to be installed in the barn before anything works, and the software stays the vendor's.",
+   caps: [1, 1, 1, 1, 0, 1],
    src: "https://www.allflexglobal.com/dairy/sensehub-dairy/",
    srcName: "Allflex SenseHub",
   },
  ];
- var US = [1, 1, 1, 1, 1, 1, 1];
+ var US = [1, 1, 1, 1, 1, 1];
  // Build nodes rather than HTML strings. The content here is fixed, but keeping
  // the sinks out of the file means it stays safe if the data ever moves.
  function dotEl(on) {

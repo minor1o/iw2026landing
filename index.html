@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cowllar by Area 51</title>
-<meta name="description" content="Cowllar is a sensor collar that watches every cow around the clock and names the one to inseminate, twelve to twenty four hours before the window closes.">
+<title>Zone 51 — Cowllar</title>
+<meta name="description" content="Know when to check. Plan when to inseminate. Cowllar is a collar under development for farm owners and managers who need to detect estrus and schedule insemination across a herd.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230E1513'/><circle cx='16' cy='16' r='6' fill='none' stroke='%23E6A03C' stroke-width='2.4'/><rect x='13.6' y='6' width='4.8' height='5' rx='1.4' fill='%23E6A03C'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@
 <body>
 
 <header class="bar" id="bar">
-  <div class="brand">Cowllar <span>AREA 51</span></div>
+  <div class="brand">Cowllar <span>ZONE 51</span></div>
   <nav>
     <a href="#cost">Cost</a>
     <a href="#farms">Farms</a>
@@ -54,18 +54,18 @@
 
 <!-- ================= HERO ================= -->
 <!-- RUBRIC 1 — A catchy name that carries the team number.
-     The name is Area 51, so the "51" is inside the team name itself. It appears in the
-     page title ("Cowllar by Area 51"), in the badge below ("Team 51, Area 51"), and in the
+     The name is Zone 51, so the "51" is inside the team name itself. It appears in the
+     page title ("Cowllar by Zone 51"), in the badge below ("Team 51, Zone 51"), and in the
      footer signature. One name, one number, no separate branding to remember. -->
 <section class="hero" id="top">
   <div class="hero-copy">
     <div class="inner">
-      <div class="badge"><s></s>Team 51, Area 51</div>
+      <div class="badge"><s></s>Team 51, Zone 51</div>
       <h1>
-        <span class="line"><b>She is in heat</b></span>
-        <span class="line"><b>for eight hours.</b></span>
+        <span class="line"><b>Know when to check.</b></span>
+        <span class="line"><b>Plan when to inseminate.</b></span>
       </h1>
-      <p class="sub">Cowllar watches every cow through the night and names the one to inseminate in the morning. Miss her and the farm waits another 21 days.</p>
+      <p class="sub">Know which animal needs attention — and when to inseminate. Cowllar monitors individual animals between staff observations and turns changes in their behaviour into a recommendation: an animal ID and an insemination window.</p>
       <div class="cta">
         <a class="btn" href="#see">Watch a heat unfold</a>
         <a class="btn ghost" href="#device">Look inside the collar</a>
@@ -136,8 +136,8 @@
 <section class="sec deep" id="farms">
   <div class="wrap">
     <div class="head-row">
-      <h2 class="h-sec">We asked four farms. <br>Four said yes.</h2>
-      <p class="lede">Before any of this was built we sat with the people who would use it. These are their words, not ours. The one farm that said no has twelve cows and knows every one of them by name.</p>
+      <h2 class="h-sec">We asked four farms. <br>Three said yes.</h2>
+      <p class="lede">Before any of this was built we sat with the people who would use it. These are their words, not ours. The one farm that said no has twelve cows and knows every one of them by name. Three of the four expressed interest in automated estrus detection: that says the problem matters to them, and it is not a customer order.</p>
     </div>
 
     <div class="voices">
@@ -198,18 +198,18 @@
     </div>
     <div class="promise reveal">
       <div class="n">02</div>
-      <div><h3>We give you a window.</h3><span class="chip">12 to 24 hours of lead time</span></div>
-      <p class="body">The collar watches movement, rumination and skin temperature against that cow's own seven day baseline, then tells you when her window opens and when it closes.</p>
+      <div><h3>We give you a window.</h3><span class="chip">hours, not a herd average</span></div>
+      <p class="body">The collar compares movement and rumination against that animal's own seven day baseline and, when it raises an estrus alert, names the recommended insemination window — for example "Cow 23, today, 14:00 to 20:00". Those hours illustrate the interface, not a fixed recommendation for every animal. Opening the alert shows the changes that produced it.</p>
     </div>
     <div class="promise reveal">
       <div class="n">03</div>
-      <div><h3>It works where your wifi does not.</h3><span class="chip">classification on the collar</span></div>
-      <p class="body">Behaviour is classified on the device and written to a card. The collar carries its own wifi, so a phone or laptop can collect a day of data standing next to the animal.</p>
+      <div><h3>It stays on your farm.</h3><span class="chip">no internet connection needed</span></div>
+      <p class="body">The collar transmits over the farm's own wifi to a server on site, and that server runs the behaviour and estrus models and keeps the records. Internet access is unnecessary. Wifi coverage is required, and staff devices have to be able to reach the local server.</p>
     </div>
     <div class="promise reveal">
       <div class="n">04</div>
-      <div><h3>It finds the quiet ones.</h3><span class="chip">rumination and sound, not only steps</span></div>
-      <p class="body">Pedometers miss silent heat because silent heat has few extra steps. We add chewing and vocal sound, which is where the third of cows that never mount give themselves away.</p>
+      <div><h3>It listens as well as watches.</h3><span class="chip">movement and sound together</span></div>
+      <p class="body">Pedometers miss silent heat because silent heat shows in few extra steps. Cowllar adds a microphone and analyses chewing and rumination alongside neck movement, which is where the quiet animals give themselves away. Whether sound catches estrus that movement alone misses is the question our testing has to answer.</p>
     </div>
 
     <div class="split" style="margin-top:66px;align-items:center">
@@ -287,7 +287,7 @@
           data-text="A probe held against the skin under the strap. We do not trust the absolute number, we watch the shape of the day. A small rise that holds for hours is a useful second vote when movement alone is ambiguous.">
           <i></i><span><strong>Temperature probe</strong><span>DS18B20, 1 Hz, contact reading</span></span></button>
         <button class="part" role="option" aria-selected="false" data-img="caseled" data-title="Chewing and calling"
-          data-text="A microphone listens for rumination and vocalisation. A cow in heat chews less and calls more. This is the channel that pedometers and leg tags simply do not have, and it is how we reach the cows that never mount.">
+          data-text="A microphone records chewing and rumination. An animal in heat chews less and the pattern changes, and that is a channel a pedometer or a leg tag does not have. Whether it catches estrus that movement alone misses is what our testing has to establish.">
           <i></i><span><strong>Microphone</strong><span>rumination and vocal patterns</span></span></button>
         <button class="part" role="option" aria-selected="false" data-img="caseled" data-title="The decision happens on the cow"
           data-text="An ESP32-S3 runs the behaviour classifier on the collar itself, then serves the results over its own wifi access point. Your phone joins the collar, sets its clock and pulls the day of data. No SIM, no gateway, no monthly fee.">
@@ -366,13 +366,13 @@
 <!-- ================= SCIENCE ================= -->
 <!-- RUBRIC 3 — How we will create it: the inventive step and the superpower.
      Here comes science. Two things nobody else in the reviewed field does together:
-     sound as a sensing channel, and classification on the collar instead of in the cloud.
+     sound as a sensing channel, and the models running on a server on the farm instead of in a vendor's cloud.
      The pipeline strips below show the method from raw sensor to a cow number on a phone. -->
 <section class="sec" id="science">
   <div class="wrap">
     <div class="head-row">
       <h2 class="h-sec">From a shaking strap <br>to a name on your phone.</h2>
-      <p class="lede">Four stages. The first three run on the collar, the fourth runs on a laptop in the office. Tap a stage to see what happens to the signal.</p>
+      <p class="lede">Four stages. The collar records and transmits over the farm's wifi; the behaviour and estrus models run on a server on the farm. Tap a stage to see what happens to the signal.</p>
     </div>
 
     <div class="steps" id="steps" role="tablist" aria-label="Pipeline stages">
@@ -449,14 +449,14 @@
   <div class="wrap">
     <div class="head-row">
       <h2 class="h-sec">Three days of one cow, <br>in fifteen seconds.</h2>
-      <p class="lede">Press play. Watch movement climb, chewing fall and skin temperature lift, then watch the score cross the line and the phone go off while there is still a day to act.</p>
+      <p class="lede">Press play. Movement climbs, chewing falls and the score crosses the line while there is still a day to act. What follows is demonstration data, labelled as such.</p>
     </div>
 
     <div class="sim">
       <div class="sim-top">
         <div>
           <h4>Cow 23, hours 0 to 72</h4>
-          <p>Modelled from published estrus behaviour to show the scoring logic. Sensor traces here are an illustration, not a recording.</p>
+          <p>Demonstration data. Modelled from published estrus behaviour to show the scoring logic — the traces are an illustration, not a recording from an animal. A routine alert reads differently from a breeding recommendation: "Cow 23: movement and rumination below her usual levels. Check the animal." That names the change and claims no cause.</p>
         </div>
         <div class="sim-controls">
           <button class="play" id="playBtn" aria-label="Play the three day simulation">Play</button>
@@ -488,7 +488,7 @@
       <div>
         <h3 class="h-sub" style="margin-bottom:12px">And this is the part the farmer actually opens.</h3>
         <p style="color:var(--steel);font-size:16px">
-          The dashboard runs on a laptop in the office. It shows the herd first, then one cow, then the history behind the flag so a technologist can disagree with the machine before walking out to the barn.
+          The dashboard reaches the farm server from the office or the barn. It opens with the herd overview: staff pick the animals carrying an estrus alert or a movement and rumination alert, then open one profile. Each profile shows that animal's recorded behaviour over time against her own baseline, so a technologist can disagree with the machine before walking out to the barn.
         </p>
       </div>
       <div>
@@ -515,7 +515,7 @@
   <div class="wrap">
     <div class="head-row">
       <h2 class="h-sec">Eleven hours on a cow. <br>Then she broke it.</h2>
-      <p class="lede">A partner farm in Moscow oblast let us strap the collar to an animal for a working day. We got the data out, and we got the failure we needed to design version two.</p>
+      <p class="lede">A partner farm in Moscow oblast let us strap an earlier prototype to an animal for a working day. We got the data out, and we got the failure we needed to design version two. What follows is earlier field experience: it informs the current work on attachment and recording quality, and it does not validate the design described on this page.</p>
     </div>
 
     <div class="stats reveal">
@@ -590,19 +590,15 @@
       </div>
     </div>
 
-    <h3 class="h-sub" style="margin-top:80px">Area 51</h3>
+    <h3 class="h-sub" style="margin-top:80px">Interested in Cowllar for your farm?</h3>
 
     <!-- RUBRIC 6 — Make the next step easy: the call to action.
-         Two routes, both one action deep: email us, or leave an address and we email you.
-         The form is intentionally inert (onsubmit returns false) — no backend on a prototype. -->
+         The reviewed copy says enquiries are not open yet, so there is deliberately no live
+         contact route here. When they open, this is where the address and the form go. -->
     <div class="cta-box">
-      <p class="cta-line">Interested? Email us: <a href="mailto:area51@cowllar.com">area51@cowllar.com</a></p>
-      <form class="cta-form" onsubmit="return false">
-        <label for="ctaEmail">Or leave your address and we will email you</label>
-        <input id="ctaEmail" name="email" type="email" placeholder="you@yourfarm.ru" autocomplete="email">
-        <button class="btn" type="submit">Email me</button>
-      </form>
-      <p class="cta-note">Prototype: this button is a demo and does not send anything yet.</p>
+      <p class="cta-line">Email enquiries will open when Zone 51 is ready to receive them. The contact option will invite farm owners and managers to send their animal species, herd size, housing system and current method of detecting estrus.</p>
+      <p class="cta-line">Describe one recurring problem: an animal whose heat goes unnoticed, difficulty observing the herd at night, or uncertainty about when to inseminate. That is what will tell us whether the collar fits the way your farm works.</p>
+      <p class="cta-note">Cowllar is currently in development. Email enquiries are not yet open.</p>
     </div>
   </div>
 </section>
@@ -628,8 +624,8 @@
       </div>
     </div>
     <div class="sig">
-      <span>Cowllar, built by Area 51</span>
-      <span>Prototype v1, eleven hours on a cow, 79.1 percent held out accuracy</span>
+      <span>Cowllar, built by Zone 51</span>
+      <span>In development. Earlier prototype: eleven hours on one cow, 79.1 percent held out accuracy on a public dataset</span>
     </div>
   </div>
 </footer>
