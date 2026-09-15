@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cowllar by Area 51</title>
+<meta name="description" content="Cowllar is a sensor collar that watches every cow around the clock and names the one to inseminate, twelve to twenty four hours before the window closes.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230E1513'/><circle cx='16' cy='16' r='6' fill='none' stroke='%23E6A03C' stroke-width='2.4'/><rect x='13.6' y='6' width='4.8' height='5' rx='1.4' fill='%23E6A03C'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<header class="bar" id="bar">
+  <div class="brand">Cowllar <span>AREA 51</span></div>
+  <nav>
+    <a href="#cost">Cost</a>
+    <a href="#farms">Farms</a>
+    <a href="#promise">Promise</a>
+    <a href="#rivals">Rivals</a>
+    <a href="#device">Device</a>
+    <a href="#science">Science</a>
+    <a href="#see">See it work</a>
+    <a href="#proof">Proof</a>
+  </nav>
+  <div class="themes" role="group" aria-label="Colour theme">
+    <button data-theme="dark" aria-pressed="true"><i></i><span>night</span></button>
+    <button data-theme="light" aria-pressed="false"><i></i><span>milk</span></button>
+    <button data-theme="lemon" aria-pressed="false"><i></i><span>lemon</span></button>
+  </div>
+</header>
+
+<div class="rail" id="rail" aria-hidden="true">
+  <button data-go="top"><i></i>start</button>
+  <button data-go="cost"><i></i>cost</button>
+  <button data-go="farms"><i></i>farms</button>
+  <button data-go="promise"><i></i>promise</button>
+  <button data-go="rivals"><i></i>rivals</button>
+  <button data-go="device"><i></i>device</button>
+  <button data-go="science"><i></i>science</button>
+  <button data-go="see"><i></i>see it work</button>
+  <button data-go="proof"><i></i>proof</button>
+  <button data-go="next"><i></i>next</button>
+</div>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-copy">
+    <div class="inner">
+      <div class="badge"><s></s>Team 51, Area 51</div>
+      <h1>
+        <span class="line"><b>She is in heat</b></span>
+        <span class="line"><b>for eight hours.</b></span>
+      </h1>
+      <p class="sub">Cowllar watches every cow through the night and names the one to inseminate in the morning. Miss her and the farm waits another 21 days.</p>
+      <div class="cta">
+        <a class="btn" href="#see">Watch a heat unfold</a>
+        <a class="btn ghost" href="#device">Look inside the collar</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="assets/img/hero.jpg" fetchpriority="high" alt="A cow in a barn wearing the Cowllar sensor collar on an orange strap">
+  </div>
+  <div class="hero-cap">Cowllar on a live cow <br>Moscow oblast, May 2026</div>
+  <div class="strip">
+    <canvas id="trace" aria-hidden="true"></canvas>
+    <div class="readout">
+      <div><span>motion</span><b id="rMotion">0.14</b></div>
+      <div><span>skin temp</span><b id="rTemp">32.6</b></div>
+      <div><span>sound</span><b id="rSound">1240</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COST ================= -->
+<section class="sec raise" id="cost">
+  <div class="wrap">
+    <div class="head-row">
+      <h2 class="h-sec">One missed heat is <br>10,500 roubles and three lost weeks.</h2>
+      <p class="lede">A cow signals for six to eight hours. A third of cows barely signal at all. Nobody can watch two hundred animals through a February night, so the calendar takes over and the guessing starts.</p>
+    </div>
+
+    <div class="calc">
+      <div>
+        <div class="slider-row">
+          <label for="herd">Cows in your herd <b><span id="herdV">400</span></b></label>
+          <input id="herd" type="range" min="100" max="3000" step="50" value="400">
+        </div>
+        <div class="slider-row">
+          <label for="miss">Heats you miss today <b><span id="missV">45</span>%</b></label>
+          <input id="miss" type="range" min="10" max="70" step="1" value="45">
+        </div>
+        <p style="font-size:14px;color:var(--steel);max-width:46ch">
+          Move the sliders to your farm. Cows cycle roughly every 21 days, so each animal offers about 17 chances a year.
+          Published miss rates in Russian herds run from 40 to 62 percent, and reach 83 percent in hard frost.
+        </p>
+      </div>
+      <div class="bill">
+        <div class="rub"><span id="loss">315</span><small>million roubles a year</small></div>
+        <p class="caption">Lost to heats that nobody saw, at 10,500 roubles per miss.</p>
+        <div class="sub-metrics">
+          <div><span>missed heats a year</span><b id="misses">3,060</b></div>
+          <div><span>hours of watching saved</span><b id="hours">6,800</b></div>
+          <div><span>collar parts per cow</span><b>$50</b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="facts reveal">
+      <div><b>6 to 8 h</b><p>Window where standing heat is clearly visible. Most of it falls at night.</p></div>
+      <div><b>1 in 3</b><p>Cows ovulate with signs too weak to see. This is subestrus, and eyes cannot fix it.</p></div>
+      <div><b>34 to 55%</b><p>Inseminations that land at the wrong hour, even on farms that watch carefully.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= FARM VOICES ================= -->
+<section class="sec deep" id="farms">
+  <div class="wrap">
+    <div class="head-row">
+      <h2 class="h-sec">We asked four farms. <br>Four said yes.</h2>
+      <p class="lede">Before any of this was built we sat with the people who would use it. These are their words, not ours. The one farm that said no has twelve cows and knows every one of them by name.</p>
+    </div>
+
+    <div class="voices">
+      <div class="who" id="who" role="listbox" aria-label="People we interviewed">
+        <button role="option" aria-selected="true" data-q="0"><strong>Plemzavod Maisky</strong><span>breeding plant, uses collars today</span></button>
+        <button role="option" aria-selected="false" data-q="1"><strong>Golden Calf</strong><span>farm, works with insemination bulls</span></button>
+        <button role="option" aria-selected="false" data-q="2"><strong>Sokolova farm</strong><span>small herd, visual monitoring</span></button>
+        <button role="option" aria-selected="false" data-q="3"><strong>Veterinary advisor</strong><span>cattle specialisation, name withheld</span></button>
+      </div>
+      <blockquote class="say">
+        <p id="qText">We already have collars for activity and chewing, but they are inconvenient for heat and we do not trust them. Pedometers were tried and they got lost. Skips happen often, and the cost is a longer service period, extra hormones and less milk. Health and heat monitoring in one device would be ideal.</p>
+        <cite id="qWho">Plemzavod Maisky, breeding plant<br>interviewed by Anastasiya, spring 2026</cite>
+      </blockquote>
+    </div>
+
+    <div class="tally reveal">
+      <div class="yes"><b>Plemzavod Maisky</b><span>wants something more precise</span></div>
+      <div class="yes"><b>Golden Calf</b><span>wants it for the winter months</span></div>
+      <div class="yes"><b>Sokolova farm</b><span>wants simpler control</span></div>
+      <div class="no"><b>Gzhelsky collective farm</b><span>no, twelve cows, knows them all</span></div>
+    </div>
+    <div class="split" style="margin-top:62px;align-items:center">
+      <figure style="max-width:420px">
+        <img src="assets/img/barn.jpg" loading="lazy" alt="A worker feeding cows at the barrier of a tie stall barn">
+        <figcaption>Feeding time at the barrier. The cows we need to reach spend the winter in rows like this, watched by one or two people who also have everything else to do that day.</figcaption>
+      </figure>
+      <div>
+        <h3 class="h-sub" style="margin-bottom:14px">Seven interns told us the same story.</h3>
+        <p style="color:var(--steel);font-size:15.5px;margin-bottom:20px">
+          Students who spend their summers on farms, between them at ROTA AGRO, Sovhoz im. Lenina, EkoNiva and RumelkoAgro. We asked what goes wrong with the method they use now.
+        </p>
+        <div class="intern">
+          <p>Hidden estrus, a considerable number of omissions.</p>
+          <p>Too many factors affect the behaviour and the reaction of the body. It is hard to keep track of the same cow, because they all move around the same shed, and for many of them the moment passes in a quiet phase. If a cow is sick or injured, attention goes there instead.</p>
+          <p>Inaccuracy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROMISE ================= -->
+<section class="sec" id="promise">
+  <div class="wrap">
+    <div class="head-row">
+      <h2 class="h-sec">What we promise the person <br>who walks the barn at 5 am.</h2>
+      <p class="lede">Not a dashboard full of charts. Four plain commitments, each one testable on your farm.</p>
+    </div>
+
+    <div class="promise reveal">
+      <div class="n">01</div>
+      <div><h3>We name the cow.</h3><span class="chip">cow number, not a herd average</span></div>
+      <p class="body">The alert says Cow 23, not "activity is elevated in group B". You walk to one animal, confirm, and inseminate.</p>
+    </div>
+    <div class="promise reveal">
+      <div class="n">02</div>
+      <div><h3>We give you a window.</h3><span class="chip">12 to 24 hours of lead time</span></div>
+      <p class="body">The collar watches movement, rumination and skin temperature against that cow's own seven day baseline, then tells you when her window opens and when it closes.</p>
+    </div>
+    <div class="promise reveal">
+      <div class="n">03</div>
+      <div><h3>It works where your wifi does not.</h3><span class="chip">classification on the collar</span></div>
+      <p class="body">Behaviour is classified on the device and written to a card. The collar carries its own wifi, so a phone or laptop can collect a day of data standing next to the animal.</p>
+    </div>
+    <div class="promise reveal">
+      <div class="n">04</div>
+      <div><h3>It finds the quiet ones.</h3><span class="chip">rumination and sound, not only steps</span></div>
+      <p class="body">Pedometers miss silent heat because silent heat has few extra steps. We add chewing and vocal sound, which is where the third of cows that never mount give themselves away.</p>
+    </div>
+
+    <div class="split" style="margin-top:66px;align-items:center">
+      <figure>
+        <img src="assets/img/vet.jpg" loading="lazy" alt="A veterinarian standing in the aisle of a dairy barn">
+        <figcaption>Illustration of the role, not a member of our team.</figcaption>
+      </figure>
+      <div>
+        <h3 class="h-sub" style="margin-bottom:14px">One person covers the whole herd.</h3>
+        <p style="color:var(--steel);font-size:16px;max-width:46ch">
+          On the farms we are aiming at, three hundred cows and up, a single veterinarian or reproduction technologist carries the breeding decisions. They do not need more numbers on a screen. They need to be told which animal to walk to, before the window shuts.
+        </p>
+        <p style="color:var(--steel);font-size:16px;max-width:46ch;margin-top:16px">
+          Everything on this page is built backwards from that one moment.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= RIVALS ================= -->
+<section class="sec deep" id="rivals">
+  <div class="wrap">
+    <div class="head-row">
+      <h2 class="h-sec">Heat detection exists. <br>It keeps missing the quiet ones.</h2>
+      <p class="lede">Pick what your farm uses now, or what a salesperson offered you last month, and see the honest comparison.</p>
+    </div>
+
+    <div class="rivals">
+      <div class="rival-list" id="rivalList" role="listbox" aria-label="Existing approaches">
+        <button role="option" aria-selected="true" data-r="0"><i></i><span><strong>A person watching</strong><span>eyes, chalk and a notebook</span></span></button>
+        <button role="option" aria-selected="false" data-r="1"><i></i><span><strong>Hormone synchronisation</strong><span>Ovsynch protocols</span></span></button>
+        <button role="option" aria-selected="false" data-r="2"><i></i><span><strong>Leg pedometer</strong><span>SmartTag, RumiWatch</span></span></button>
+        <button role="option" aria-selected="false" data-r="3"><i></i><span><strong>Ear tag analytics</strong><span>CowManager, Smartbow</span></span></button>
+        <button role="option" aria-selected="false" data-r="4"><i></i><span><strong>Rumen bolus</strong><span>swallowed temperature sensor</span></span></button>
+        <button role="option" aria-selected="false" data-r="5"><i></i><span><strong>Vaginal probe</strong><span>Cow Call</span></span></button>
+        <button role="option" aria-selected="false" data-r="6"><i></i><span><strong>Imported neck collar</strong><span>Heatime Pro+, Tru-Test</span></span></button>
+      </div>
+
+      <div class="rival-panel">
+        <h4 id="rvName">A person watching</h4>
+        <div class="pair">
+          <div><h6>how it finds heat</h6><p id="rvHow">Staff watch the herd and mark the cows that stand to be mounted, usually twice a day between everything else that needs doing.</p></div>
+          <div class="miss"><h6>where it loses her</h6><p id="rvMiss">Signs last six to eight hours and most of them fall at night. A third of cows barely show anything at all, and in hard frost the miss rate climbs to 83 percent.</p></div>
+        </div>
+        <table class="caps">
+          <thead><tr><th>capability</th><th id="rvCol">them</th><th class="us">Cowllar</th></tr></thead>
+          <tbody id="capBody"></tbody>
+        </table>
+        <p style="font-family:var(--mono);font-size:11.5px;color:var(--steel);margin-top:18px" id="rvPrice">Cost: staff time, roughly one hour per checkup.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEVICE ================= -->
+<section class="sec raise" id="device">
+  <div class="wrap">
+    <div class="head-row">
+      <h2 class="h-sec">Six parts, one strap, <br>built by hand in Moscow.</h2>
+      <p class="lede">Every component was chosen so the whole collar stays under fifty dollars in parts and keeps running with no network, no subscription and no cloud.</p>
+    </div>
+
+    <div class="explorer">
+      <div class="parts" id="parts" role="listbox" aria-label="Collar components">
+        <button class="part" role="option" aria-selected="true" data-img="board" data-title="Motion, 25 times a second"
+          data-text="A three axis accelerometer and magnetometer on the neck. Walking, standing, lying and mounting each leave a different signature. When a cow comes into heat this signal doubles or triples, and that is the loudest thing on the animal.">
+          <i></i><span><strong>Motion sensor</strong><span>GY-85, 25 Hz, three axes</span></span></button>
+        <button class="part" role="option" aria-selected="false" data-img="caseopen" data-title="Skin temperature, once a second"
+          data-text="A probe held against the skin under the strap. We do not trust the absolute number, we watch the shape of the day. A small rise that holds for hours is a useful second vote when movement alone is ambiguous.">
+          <i></i><span><strong>Temperature probe</strong><span>DS18B20, 1 Hz, contact reading</span></span></button>
+        <button class="part" role="option" aria-selected="false" data-img="caseled" data-title="Chewing and calling"
+          data-text="A microphone listens for rumination and vocalisation. A cow in heat chews less and calls more. This is the channel that pedometers and leg tags simply do not have, and it is how we reach the cows that never mount.">
+          <i></i><span><strong>Microphone</strong><span>rumination and vocal patterns</span></span></button>
+        <button class="part" role="option" aria-selected="false" data-img="caseled" data-title="The decision happens on the cow"
+          data-text="An ESP32-S3 runs the behaviour classifier on the collar itself, then serves the results over its own wifi access point. Your phone joins the collar, sets its clock and pulls the day of data. No SIM, no gateway, no monthly fee.">
+          <i></i><span><strong>Processor and radio</strong><span>ESP32-S3, on device inference</span></span></button>
+        <button class="part" role="option" aria-selected="false" data-img="caseopen" data-title="Nothing is lost"
+          data-text="A real time clock stamps every row and a memory card holds it. Eleven hours on a cow produced about 39,000 classified windows, all of it still readable after the animal had finished with the collar.">
+          <i></i><span><strong>Clock and storage</strong><span>DS3231 and microSD, timestamped rows</span></span></button>
+        <button class="part" role="option" aria-selected="false" data-img="lid" data-title="Printed, sealed, then tested by a cow"
+          data-text="The shell is printed in PETG with a textured lid, sealed with screws and carried on a wide nylon strap. A real cow wore it for eleven hours and then broke it, which is the most useful hardware result we got all semester.">
+          <i></i><span><strong>Shell and strap</strong><span>printed PETG, 100 by 90 by 45 mm</span></span></button>
+      </div>
+
+      <div class="viewer">
+        <div class="frame">
+          <img class="on" data-key="board" src="assets/img/board.jpg" loading="lazy" alt="Hand soldered sensor board with battery pack">
+          <img data-key="caseopen" src="assets/img/caseopen.jpg" alt="Open enclosure with battery, sensor board, charger and memory card">
+          <img data-key="caseled" src="assets/img/caseled.jpg" alt="Sensor board on the bench with status lights on">
+          <img data-key="lid" src="assets/img/lid.jpg" alt="Textured printed lid held in a hand">
+        </div>
+        <div class="txt">
+          <h4 id="vTitle">Motion, 25 times a second</h4>
+          <p id="vText">A three axis accelerometer and magnetometer on the neck. Walking, standing, lying and mounting each leave a different signature. When a cow comes into heat this signal doubles or triples, and that is the loudest thing on the animal.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="rig">
+      <div>
+        <div class="stage3d" id="stage3d" tabindex="0" role="application"
+             aria-label="Exploded view of the collar. Drag to rotate, use the slider to separate the layers.">
+          <div class="rigscale"><div class="rigbox" id="rigbox">
+            <div class="layer l-lid" data-i="0"><div class="face">
+              <span class="brandplate">Cowllar</span><span class="led g"></span><span class="led r"></span><span class="sw"></span>
+            </div></div>
+            <div class="layer l-board" data-i="1"><div class="face">
+              <span class="chip" style="left:12%;top:18%;width:64px;height:40px"></span>
+              <span class="chip" style="left:56%;top:14%;width:44px;height:30px"></span>
+              <span class="chip" style="left:30%;top:58%;width:52px;height:26px"></span>
+              <span class="chip" style="left:68%;top:56%;width:30px;height:30px"></span>
+              <span class="pad" style="left:22%;top:80%"></span><span class="pad" style="left:30%;top:80%"></span>
+              <span class="pad" style="left:38%;top:80%"></span><span class="pad" style="left:46%;top:80%"></span>
+            </div></div>
+            <div class="layer l-power" data-i="2"><div class="face">
+              <span class="cell"></span><span class="usb"></span>
+            </div></div>
+            <div class="layer l-base" data-i="3"><div class="face"><span class="wall"></span></div></div>
+            <div class="layer l-strap" data-i="4"><div class="face"><span class="buckle"></span></div></div>
+          </div></div>
+        </div>
+        <div class="rig-controls">
+          <span class="hint">drag to rotate</span>
+          <span class="hint" style="opacity:.75">separate</span>
+          <input id="explode" type="range" min="0" max="100" value="100" aria-label="Separate the layers">
+          <button class="hint" id="rigReset" style="border:1px solid var(--line-strong);padding:6px 12px;border-radius:2px">reset view</button>
+        </div>
+      </div>
+
+      <div class="rig-legend" id="rigLegend">
+        <button data-i="0" aria-current="false"><i style="background:#9AA09A"></i><span><strong>Printed lid</strong><span>Engraved shell top with two status lights and the power switch.</span></span></button>
+        <button data-i="1" aria-current="false"><i style="background:#1F6B4A"></i><span><strong>Sensor board</strong><span>Processor, motion sensor, clock, microphone and card slot, soldered by hand.</span></span></button>
+        <button data-i="2" aria-current="false"><i style="background:#27447F"></i><span><strong>Power</strong><span>One 18650 cell and the charge controller behind a USB port.</span></span></button>
+        <button data-i="3" aria-current="false"><i style="background:#2F6BD6"></i><span><strong>Shell base</strong><span>Printed body that carries the mount points and keeps the barn out.</span></span></button>
+        <button data-i="4" aria-current="false"><i style="background:#D4701A"></i><span><strong>Neck strap</strong><span>Wide nylon webbing with a counterweight so the box stays upright.</span></span></button>
+      </div>
+    </div>
+
+    <div class="gal wide reveal">
+      <button data-cap="Sealed collar unit, ready for the barn"><img src="assets/img/assembled.jpg" loading="lazy" alt="Assembled Cowllar enclosure"><span class="cap">Sealed unit</span></button>
+      <button data-cap="Inside: battery, sensor board, charge module, memory card"><img src="assets/img/caseopen.jpg" loading="lazy" alt="Inside of the Cowllar enclosure"><span class="cap">Inside the shell</span></button>
+      <button data-cap="Bench test: boot sequence, sensor check, status lights"><img src="assets/img/caseled.jpg" loading="lazy" alt="Sensor board during a bench test"><span class="cap">Bench test</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCIENCE ================= -->
+<section class="sec" id="science">
+  <div class="wrap">
+    <div class="head-row">
+      <h2 class="h-sec">From a shaking strap <br>to a name on your phone.</h2>
+      <p class="lede">Four stages. The first three run on the collar, the fourth runs on a laptop in the office. Tap a stage to see what happens to the signal.</p>
+    </div>
+
+    <div class="steps" id="steps" role="tablist" aria-label="Pipeline stages">
+      <button class="step" role="tab" aria-selected="true" data-stage="0"><em>stage 1</em><h4>Sense</h4><p>Motion, temperature and sound, timestamped on the animal.</p></button>
+      <button class="step" role="tab" aria-selected="false" data-stage="1"><em>stage 2</em><h4>Cut into windows</h4><p>Two second windows, half of each window shared with the next.</p></button>
+      <button class="step" role="tab" aria-selected="false" data-stage="2"><em>stage 3</em><h4>Name the behaviour</h4><p>Resting, ruminating, feeding or active, for every window.</p></button>
+      <button class="step" role="tab" aria-selected="false" data-stage="3"><em>stage 4</em><h4>Score the day</h4><p>Compare today against this cow's own week and raise a flag.</p></button>
+    </div>
+
+    <div class="stage">
+      <div class="stage-grid">
+        <svg id="stageSvg" viewBox="0 0 640 210" role="img" aria-label="Diagram of the current pipeline stage"></svg>
+        <div class="note">
+          <h5 id="stTitle">Raw signal, 25 rows a second</h5>
+          <p id="stText">The collar writes one row 25 times a second: three axes of acceleration, magnetometer, skin temperature and a sound level, each with a timestamp. A single day is about two million rows, which is why nothing useful happens until the next stage.</p>
+          <ul id="stList"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="loco" style="margin-top:90px">
+      <div>
+        <h3 class="h-sub" style="margin-bottom:8px">We tested it on cows the model had never met.</h3>
+        <p style="color:var(--steel);font-size:16px;max-width:54ch;margin-bottom:26px">
+          Six cows from a public Japanese dataset recorded at the same 25 Hz on the same part of the body. We trained on five and tested on the sixth, then rotated. No cow ever appears in both sides of the split, so nothing is memorised.
+        </p>
+        <svg id="locoSvg" viewBox="0 0 640 280" role="img" aria-label="Accuracy for each held out cow"></svg>
+      </div>
+      <div>
+        <div class="bill" style="border-left-color:var(--mint)">
+          <div class="rub" style="color:var(--mint)">79.1<small>percent accuracy</small></div>
+          <p class="caption">Pooled across all six held out cows, four behaviour classes, macro F1 of 0.67.</p>
+          <div class="sub-metrics">
+            <div><span>best held out cow</span><b>91.6%</b></div>
+            <div><span>weakest cow</span><b>56.8%</b></div>
+          </div>
+        </div>
+        <figure style="margin-top:34px">
+          <img src="assets/img/confusion.png" loading="lazy" alt="Confusion matrix for the leave one cow out validation">
+          <figcaption>Where the model is right and where it is not. Resting and active are clean. Feeding is the hard class, and it is the one we fix next.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="two-col reveal">
+      <div class="ok">
+        <h5>What this proves today</h5>
+        <ul>
+          <li>The hardware records four sensors on a live animal for a full working day.</li>
+          <li>The pipeline runs end to end, from raw rows to a named behaviour.</li>
+          <li>Behaviour transfers across animals the model has never seen, at 79.1 percent.</li>
+          <li>The farmer can collect a day of data with a phone, standing next to the cow.</li>
+        </ul>
+      </div>
+      <div class="gap">
+        <h5>What we have not earned yet</h5>
+        <ul>
+          <li>Estrus alerts checked against a vet's confirmation. The scoring is wired, the labels are not collected.</li>
+          <li>Russian dairy breeds. Our validation cows are Japanese Black beef.</li>
+          <li>A week of continuous wear. Our record is eleven hours before the cow won.</li>
+          <li>More than one animal at a time. The July pilot is where that changes.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SEE IT WORK ================= -->
+<section class="sec raise" id="see">
+  <div class="wrap">
+    <div class="head-row">
+      <h2 class="h-sec">Three days of one cow, <br>in fifteen seconds.</h2>
+      <p class="lede">Press play. Watch movement climb, chewing fall and skin temperature lift, then watch the score cross the line and the phone go off while there is still a day to act.</p>
+    </div>
+
+    <div class="sim">
+      <div class="sim-top">
+        <div>
+          <h4>Cow 23, hours 0 to 72</h4>
+          <p>Modelled from published estrus behaviour to show the scoring logic. Sensor traces here are an illustration, not a recording.</p>
+        </div>
+        <div class="sim-controls">
+          <button class="play" id="playBtn" aria-label="Play the three day simulation">Play</button>
+          <span class="clock mono" id="simClock">hour 00</span>
+        </div>
+      </div>
+
+      <svg id="simSvg" viewBox="0 0 900 340" role="img" aria-label="Simulated movement, rumination, temperature and estrus score across 72 hours"></svg>
+      <input class="sim-scrub" id="scrub" type="range" min="0" max="144" value="0" aria-label="Scrub through the simulated three days">
+
+      <div class="sim-legend">
+        <span><i style="background:var(--heat)"></i>movement</span>
+        <span><i style="background:var(--mint)"></i>rumination</span>
+        <span><i style="background:var(--straw)"></i>skin temperature</span>
+        <span><i style="background:var(--milk)"></i>estrus score against her own baseline</span>
+      </div>
+
+      <div class="alert-wrap">
+        <div class="alert-card" id="alertCard">
+          <div class="stamp" id="alertStamp">waiting for the score to cross</div>
+          <h5 id="alertTitle">No action needed</h5>
+          <p id="alertBody">Cow 23 is inside her normal range. The collar keeps counting and says nothing, which is most of the time and exactly the point.</p>
+        </div>
+        <img class="phone dim" id="phoneShot" src="assets/img/phone.png" loading="lazy" alt="Phone showing a heat detected alert for cow 23">
+      </div>
+    </div>
+
+    <div class="split" style="margin-top:86px">
+      <div>
+        <h3 class="h-sub" style="margin-bottom:12px">And this is the part the farmer actually opens.</h3>
+        <p style="color:var(--steel);font-size:16px">
+          The dashboard runs on a laptop in the office. It shows the herd first, then one cow, then the history behind the flag so a technologist can disagree with the machine before walking out to the barn.
+        </p>
+      </div>
+      <div>
+        <figure>
+          <img src="assets/img/dashlive.jpg" loading="lazy" alt="Cowllar dashboard live monitor view with estrus gauge">
+          <figcaption>Live monitor. Estrus gauge, current behaviour, device link and battery, updating while the collar streams.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="gal wide reveal">
+      <button data-cap="Herd overview and per cow records"><img src="assets/img/dashherd.jpg" loading="lazy" alt="Herd overview screen"><span class="cap">Herd overview</span></button>
+      <button data-cap="History view, behaviour stacked over time windows"><img src="assets/img/dashhist.jpg" loading="lazy" alt="History screen with behaviour bars"><span class="cap">History</span></button>
+      <button data-cap="Live monitor with estrus gauge and device status"><img src="assets/img/dashlive.jpg" loading="lazy" alt="Live monitor screen"><span class="cap">Live monitor</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROOF ================= -->
+<section class="sec" id="proof">
+  <div class="wrap">
+    <div class="head-row">
+      <h2 class="h-sec">Eleven hours on a cow. <br>Then she broke it.</h2>
+      <p class="lede">A partner farm in Moscow oblast let us strap the collar to an animal for a working day. We got the data out, and we got the failure we needed to design version two.</p>
+    </div>
+
+    <div class="stats reveal">
+      <div><b data-count="11">0</b><span>hours of live deployment</span><small>three recording sessions</small></div>
+      <div><b data-count="39" data-suffix="k">0</b><span>behaviour predictions</span><small>one second windows at 25 Hz</small></div>
+      <div><b data-count="74" data-suffix="%">0</b><span>mean confidence</span><small>across four classes</small></div>
+      <div><b data-count="1">0</b><span>collar destroyed</span><small>hardware lesson, logged</small></div>
+    </div>
+
+    <figure style="margin-top:56px">
+      <img src="assets/img/timeline.png" loading="lazy" alt="Predicted behaviour timeline across eleven hours of deployment">
+      <figcaption>Every prediction from the deployment, drawn end to end. The collar slipped around hour six and the temperature wire fatigued near the end, both visible in the trace. We kept the failures in the picture instead of cropping them out.</figcaption>
+    </figure>
+
+    <div class="split" style="margin-top:72px">
+      <figure>
+        <img src="assets/img/signal.jpg" loading="lazy" alt="Multi channel recording with labelled activity phases">
+        <figcaption>Bench validation before the farm. Motion, sound and a labelled ground truth track, recorded by the same collar and processed by the same code that later ran on the cow.</figcaption>
+      </figure>
+      <div>
+        <h3 class="h-sub" style="margin-bottom:16px">The field log behind this page</h3>
+        <div class="ledger">
+          <div><b>20</b><span>farms on the contact list, built with veterinary students</span></div>
+          <div><b>4</b><span>full interviews, three of them wanting it, one honest no</span></div>
+          <div><b>7</b><span>interns who work these barns every summer</span></div>
+          <div><b>1</b><span>partner farm that put the collar on an animal</span></div>
+          <div><b>11 h</b><span>of sensor data from that animal, analysed and kept</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NEXT ================= -->
+<section class="sec raise" id="next">
+  <div class="wrap">
+    <div class="head-row">
+      <h2 class="h-sec">What version two fixes, <br>and who is doing it.</h2>
+      <p class="lede">The cow wrote our roadmap for us. Smaller, tougher, and worn by more than one animal for more than one day.</p>
+    </div>
+
+    <div class="road">
+      <div>
+        <h4>Hardware</h4>
+        <ul>
+          <li>Smaller and lighter housing, less for a cow to catch and pull</li>
+          <li>Impact resistant shell instead of printed PETG</li>
+          <li>Strain relief on the temperature probe that fatigued</li>
+          <li>Battery gauge on board, so the farm sees charge before a deployment</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Data and model</h4>
+        <ul>
+          <li>A week long pilot on several cows in July</li>
+          <li>Vet confirmed heat events, the labels we are missing</li>
+          <li>Feeding class rebuilt, it is the weakest column in the matrix</li>
+          <li>Fine tuning on Russian dairy breeds, not only the public set</li>
+        </ul>
+      </div>
+      <div>
+        <h4>On the farm</h4>
+        <ul>
+          <li>One base unit per barn, collars sync when the cow walks past</li>
+          <li>Phone alerts for the technologist who is already outside</li>
+          <li>Tie stall farms tested separately, where movement says less</li>
+          <li>Price held under fifty dollars of parts per collar</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="h-sub" style="margin-top:80px">Area 51</h3>
+    <div class="team">
+      <div class="m"><b>Akinrinsola Agbelusi</b><span>Hardware, firmware, sensors, machine learning</span></div>
+      <div class="m"><b>Aminu Taura</b><span>Hardware, enclosure design and printing</span></div>
+      <div class="m"><b>Iman Chantieva</b><span>Feature engineering, labelling, model training</span></div>
+      <div class="m"><b>Dmitrii Iarchuk</b><span>Data pipeline, API, dashboard</span></div>
+      <div class="m"><b>Anastasiya Mikhajlenko</b><span>Customer research, market analysis</span></div>
+      <div class="m"><b>Veterinary advisor</b><span>Cattle specialisation, bridge between the project and the farms</span></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Come and break it.</h4>
+        <p style="max-width:52ch">We are looking for a farm of two hundred cows or more that will let us run a week long pilot in July, and a veterinarian who will tell us when we are wrong. Bring us a cow that has fooled everyone so far.</p>
+        <p style="margin-top:18px;color:var(--milk)">Skolkovo Institute of Science and Technology, Moscow</p>
+      </div>
+      <div>
+        <p style="color:var(--milk);font-family:var(--display);font-weight:700;font-size:17px;margin-bottom:12px">Sources</p>
+        <ol>
+          <li>Hagevoort G, Garcia J. When should dairy cows be inseminated. Guide B-117, New Mexico State University, 2013.</li>
+          <li>Yoshida C, Nakao T. Characteristics of primary and secondary oestrous signs in high producing dairy cows. Reproduction in Domestic Animals, 2005.</li>
+          <li>Nazarov M, Gorpinchenko E, Gavrilov B. Artificial insemination of farm animals. KubGAU, 2018.</li>
+          <li>Japanese Black beef cow behaviour dataset, Zenodo record 5849025.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="sig">
+      <span>Cowllar, built by Area 51</span>
+      <span>Prototype v1, eleven hours on a cow, 79.1 percent held out accuracy</span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="light" id="light">
+  <button class="close" id="lightClose" aria-label="Close image">close</button>
+  <img id="lightImg" alt="">
+  <p id="lightCap"></p>
+</dialog>
+
+<script src="assets/js/core.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/hero.js"></script>
+<script src="assets/js/calculator.js"></script>
+<script src="assets/js/voices.js"></script>
+<script src="assets/js/device.js"></script>
+<script src="assets/js/pipeline.js"></script>
+<script src="assets/js/simulator.js"></script>
+<script src="assets/js/lightbox.js"></script>
+<script src="assets/js/theme.js"></script>
+</body>
+</html>

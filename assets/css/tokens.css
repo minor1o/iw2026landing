@@ -1,0 +1,64 @@
+/* Cowllar, Area 51 :: Colour, type and spacing tokens, plus the three themes */
+
+:root{
+  --barn:#0E1513;
+  --barn-raise:#14201C;
+  --barn-deep:#0A100E;
+  --milk:#F2EFE6;
+  --steel:#93A49E;
+  --straw:#E6A03C;
+  --btn-ink:#17120A;
+  --heat:#FF4D5E;
+  --mint:#63BFA4;
+  --rest:#4C7C8C;
+  --line:rgba(242,239,230,.11);
+  --line-strong:rgba(242,239,230,.22);
+  --panel:#0A100E;
+  --panel-ink:#F2EFE6;
+  --photo:saturate(.86) contrast(1.04) brightness(1.1);
+  --trace1:#E6A03C;
+  --trace2:#63BFA4;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --rail:132px;
+  --maxw:1140px;
+}
+html[data-theme="light"]{
+  --barn:#E9EDE5;
+  --barn-raise:#F5F7F1;
+  --barn-deep:#DDE4D9;
+  --milk:#131D18;
+  --steel:#57675F;
+  --straw:#A8620C;
+  --btn-ink:#FFF7EA;
+  --heat:#C42A3C;
+  --mint:#23735A;
+  --rest:#3A5F6E;
+  --line:rgba(19,29,24,.14);
+  --line-strong:rgba(19,29,24,.3);
+  --panel:#101A16;
+  --panel-ink:#F2EFE6;
+  --photo:saturate(1.02) contrast(1.02) brightness(1.02);
+  --trace1:#E6A03C;
+  --trace2:#63BFA4;
+}
+html[data-theme="lemon"]{
+  --barn:#F0E04A;
+  --barn-raise:#F8EE83;
+  --barn-deep:#E2CE22;
+  --milk:#16180D;
+  --steel:#5D5A1C;
+  --straw:#16180D;
+  --btn-ink:#F4E559;
+  --heat:#C8102E;
+  --mint:#1F6B3A;
+  --rest:#2F4858;
+  --line:rgba(22,24,13,.18);
+  --line-strong:rgba(22,24,13,.38);
+  --panel:#16180D;
+  --panel-ink:#F4E559;
+  --photo:grayscale(.9) contrast(1.22) brightness(1.06) sepia(.18);
+  --trace1:#F4E559;
+  --trace2:#8FD0A8;
+}
