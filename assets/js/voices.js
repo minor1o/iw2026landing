@@ -24,11 +24,11 @@
  var whoBtns = Array.prototype.slice.call(
   document.querySelectorAll("#who button"),
  );
- whoBtns.forEach((b) => {
+ for (const b of whoBtns) {
   b.addEventListener("click", () => {
-   whoBtns.forEach((x) => {
+   for (const x of whoBtns) {
     x.setAttribute("aria-selected", String(x === b));
-   });
+   }
    var q = quotes[+b.dataset.q];
    var t = document.getElementById("qText"),
     c = document.getElementById("qWho");
@@ -46,7 +46,7 @@
     reduce ? 0 : 160,
    );
   });
- });
+ }
 
  /* ---------- rivals comparison ---------- */
  var CAPS = [
@@ -125,7 +125,7 @@
  // the sinks out of the file means it stays safe if the data ever moves.
  function dotEl(on) {
   var s = document.createElement("span");
-  s.className = "dot " + (on ? "on" : "off");
+  s.className = `dot ${on ? "on" : "off"}`;
   s.setAttribute("role", "img");
   s.setAttribute("aria-label", on ? "yes" : "no");
   return s;
@@ -145,7 +145,7 @@
   document.getElementById("rvCol").textContent = r.n.toLowerCase();
   var srcWrap = document.getElementById("rvSrcWrap");
   if (srcWrap) {
-   var link = document.getElementById("rvSrc");
+   const link = document.getElementById("rvSrc");
    if (r.src) {
     link.href = r.src;
     link.textContent = r.srcName;
@@ -166,8 +166,8 @@
   };
   var body = document.getElementById("capBody");
   body.replaceChildren();
-  for (var k = 0; k < CAPS.length; k++) {
-   var tr = document.createElement("tr");
+  for (let k = 0; k < CAPS.length; k++) {
+   const tr = document.createElement("tr");
    tr.append(nameCell(CAPS[k]), dotCell(r.caps[k]), dotCell(US[k]));
    body.appendChild(tr);
   }
@@ -175,13 +175,13 @@
  var rivalBtns = Array.prototype.slice.call(
   document.querySelectorAll("#rivalList button"),
  );
- rivalBtns.forEach((b) => {
+ for (const b of rivalBtns) {
   b.addEventListener("click", () => {
-   rivalBtns.forEach((x) => {
+   for (const x of rivalBtns) {
     x.setAttribute("aria-selected", String(x === b));
-   });
+   }
    showRival(+b.dataset.r);
   });
- });
+ }
  showRival(0);
 })();
